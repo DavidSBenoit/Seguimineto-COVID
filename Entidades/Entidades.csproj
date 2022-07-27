@@ -48,6 +48,7 @@
     <Compile Include="EstadoCivil.cs" />
     <Compile Include="Grupo.cs" />
     <Compile Include="GrupoCuatrimestre.cs" />
+    <Compile Include="Incapacidades.cs" />
     <Compile Include="Medico.cs" />
     <Compile Include="PositivoAlumno.cs" />
     <Compile Include="PositivoProfe.cs" />
