@@ -14,7 +14,7 @@ namespace Entidades
             Profesor = new HashSet<Profesor>();
         }
 
-        public byte IdEdo { get; set; }
+        public int IdEdo { get; set; }
         public string Estado { get; set; }
         public string Extra { get; set; }
 

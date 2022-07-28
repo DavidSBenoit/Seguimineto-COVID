@@ -18,59 +18,105 @@ namespace Logica_de_Negocios
             DAL = new DAL(connection);
         }
 
-        public DataTable tablaProfesoresServer(ref string mensaje, ref string mensajeC)
-        {
-            string comandoMySql = "select * from Alumno;", etiqueta = "SeguimientoCovid";
-            DataSet dataSet = null;
-            DataTable dataTable = null;
-
-
-            dataSet = DAL.LecturaSet(comandoMySql, DAL.ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
-            if (dataSet != null)
-            {
-                dataTable = dataSet.Tables[0];
-
-
-            }
-            return dataTable;
-        }
-
-        //public List<Alumno> ListaAlumno(ref string mensaje, ref string mensajeC)
+        //public DataTable tablaProfesoresServer(ref string mensaje, ref string mensajeC)
         //{
         //    string comandoMySql = "select * from Alumno;", etiqueta = "SeguimientoCovid";
         //    DataSet dataSet = null;
         //    DataTable dataTable = null;
 
-        //    List<Alumno> listaAlumno = new List<Alumno>();
 
         //    dataSet = DAL.LecturaSet(comandoMySql, DAL.ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
         //    if (dataSet != null)
         //    {
         //        dataTable = dataSet.Tables[0];
-        //        listaAlumno = dataTable.AsEnumerable().Select(row => new Alumno
-        //        {
-        //            IdAlumno = row.Field<int>("ID_Alumno"),
-        //            Matricula = row.Field<string>("Matricula"),
-        //            Nombre = row.Field<string>("Nombre"),
-        //            ApPat = row.Field<string>("Ap_pat"),
-        //            ApMat = row.Field<string>("Ap_mat"),
-        //            Genero = row.Field<string>("Genero"),
-        //            Correo = row.Field<string>("Correo"),
-        //            Celular = row.Field<string>("Celular"),
-        //            FEdoCivil = row.Field<byte>("F_EdoCivil"),
-        //            FNivel = row.Field<byte>("F_Nivel"),
 
-        //        }).ToList();
 
         //    }
-
-        //    return listaAlumno;
-
+        //    return dataTable;
         //}
 
+        #region Consultas
         public List<Alumno> ListaAlumno(ref string mensaje, ref string mensajeC)
         {
-            return DAL.ListaAlumno(ref mensaje,ref mensajeC);
+            return DAL.ListaAlumno(ref mensaje, ref mensajeC);
         }
+
+        public List<AlumnoGrupo> ListaAlumnoGrupo(ref string mensaje, ref string mensajeC)
+        {
+            return DAL.ListaAlumnoGrupo(ref mensaje, ref mensajeC);
+        }
+
+        public List<Carrera> ListaCarrera(ref string mensaje, ref string mensajeC)
+        {
+            return DAL.ListaCarrera(ref mensaje, ref mensajeC);
+        }
+        
+        public List<Cuatrimestre> ListaCuatrimestre(ref string mensaje, ref string mensajeC)
+        {
+            return DAL.ListaCuatrimestre(ref mensaje, ref mensajeC);
+        }
+        
+        public List<EstadoCivil> ListaEstadoCivil(ref string mensaje, ref string mensajeC)
+        {
+            return DAL.ListaEstadoCivil(ref mensaje, ref mensajeC);
+        }
+        
+        public List<Grupo> ListaGrupo(ref string mensaje, ref string mensajeC)
+        {
+            return DAL.ListaGrupo(ref mensaje, ref mensajeC);
+        }
+        
+        public List<GrupoCuatrimestre> ListaGrupoCuatrimestre(ref string mensaje, ref string mensajeC)
+        {
+            return DAL.ListaGrupoCuatrimestre(ref mensaje, ref mensajeC);
+        }
+        
+        public List<Incapacidades> ListaIncapacidades(ref string mensaje, ref string mensajeC)
+        {
+            return DAL.ListaIncapacidades(ref mensaje, ref mensajeC);
+        }
+        
+        public List<Medico> ListaMedico(ref string mensaje, ref string mensajeC)
+        {
+            return DAL.ListaMedico(ref mensaje, ref mensajeC);
+        }
+        
+        public List<PositivoAlumno> ListaPositivoAlumno(ref string mensaje, ref string mensajeC)
+        {
+            return DAL.ListaPositivoAlumno(ref mensaje, ref mensajeC);
+        }
+        
+        public List<PositivoProfe> ListaPositivoProfe(ref string mensaje, ref string mensajeC)
+        {
+            return DAL.ListaPositivoProfe(ref mensaje, ref mensajeC);
+        }
+        
+        public List<ProfeGrupo> ListaProfeGrupo(ref string mensaje, ref string mensajeC)
+        {
+            return DAL.ListaProfeGrupo(ref mensaje, ref mensajeC);
+        }
+        
+        public List<Profesor> ListaProfesor(ref string mensaje, ref string mensajeC)
+        {
+            return DAL.ListaProfesor(ref mensaje, ref mensajeC);
+        }
+        
+        public List<ProgramaEducativo> ListaProgramaEducativo(ref string mensaje, ref string mensajeC)
+        {
+            return DAL.ListaProgramaEducativo(ref mensaje, ref mensajeC);
+        }
+        
+        public List<SeguimientoPro> ListaSeguimientoPro(ref string mensaje, ref string mensajeC)
+        {
+            return DAL.ListaSeguimientoPro(ref mensaje, ref mensajeC);
+        }
+        
+        public List<SeguimientoAl> ListaSeguimientoAl(ref string mensaje, ref string mensajeC)
+        {
+            return DAL.ListaSeguimientoAl(ref mensaje, ref mensajeC);
+        }
+
+        #endregion
+
     }
 }

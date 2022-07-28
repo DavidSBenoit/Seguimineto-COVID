@@ -13,11 +13,11 @@ namespace Entidades
             GrupoCuatrimestre = new HashSet<GrupoCuatrimestre>();
         }
 
-        public short IdCuatrimestre { get; set; }
+        public int IdCuatrimestre { get; set; }
         public string Periodo { get; set; }
         public int Anio { get; set; }
-        public DateTime? Inicio { get; set; }
-        public DateTime? Fin { get; set; }
+        public DateTime Inicio { get; set; }
+        public DateTime Fin { get; set; }
         public string Extra { get; set; }
 
         public virtual ICollection<GrupoCuatrimestre> GrupoCuatrimestre { get; set; }
