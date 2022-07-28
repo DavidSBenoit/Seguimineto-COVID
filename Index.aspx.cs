@@ -39,6 +39,7 @@ namespace Seguimineto_COVID
 
             for (int i = 0; i < listaAlumno.Count; i++)
             {
+                ListBox1.Items.Add("//////");
                 ListBox1.Items.Add(listaAlumno[i].IdAlumno.ToString());
                 ListBox1.Items.Add(listaAlumno[i].Matricula.ToString());
                 ListBox1.Items.Add(listaAlumno[i].Nombre.ToString());
@@ -49,6 +50,7 @@ namespace Seguimineto_COVID
                 ListBox1.Items.Add(listaAlumno[i].Genero.ToString());
                 ListBox1.Items.Add(listaAlumno[i].FEdoCivil.ToString());
                 ListBox1.Items.Add(listaAlumno[i].FNivel.ToString());
+                ListBox1.Items.Add("//////");
             }
         }
     }
