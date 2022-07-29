@@ -19,18 +19,16 @@ namespace Acceso_a_Datos
 
         #region Conexion
 
-        public SqlConnection ConnectionEstablecida(ref string mensajeC)
+        public SqlConnection ConnectionEstablecida()
         {
             SqlConnection puerto = new SqlConnection();
             puerto.ConnectionString = cableConn;
             try
             {
                 puerto.Open();
-                mensajeC = "Connexion Establecida";
             }
             catch (Exception e)
             {
-                mensajeC = "Error: " + e;
                 puerto = null;
             }
             return puerto;
@@ -107,7 +105,7 @@ namespace Acceso_a_Datos
             }
             return resp;
         }
-        public DataSet LecturaSet(string comandoMySql, SqlConnection conAbierta, ref string mensaje, string etiqueta)
+        public DataSet LecturaSet(string comandoMySql, SqlConnection conAbierta, string etiqueta)
         {
             SqlCommand comando = null;
             DataSet dataSet = null;
@@ -128,11 +126,9 @@ namespace Acceso_a_Datos
                         try
                         {
                             dataAdapter.Fill(dataSet, etiqueta);
-                            mensaje = "Recuperacion Correcta";
                         }
                         catch (Exception e)
                         {
-                            mensaje = "Lo siento: " + e.Message;
                             dataSet = null;
                         }
                     }
@@ -144,7 +140,7 @@ namespace Acceso_a_Datos
 
         #region Consultas
 
-        public List<Alumno> ListaAlumno(ref string mensaje, ref string mensajeC)
+        public List<Alumno> ListaAlumno()
         {
             string comandoMySql = "select * from Alumno;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -152,7 +148,7 @@ namespace Acceso_a_Datos
 
             List<Alumno> listaAlumno = new List<Alumno>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];
@@ -177,7 +173,7 @@ namespace Acceso_a_Datos
 
         }
 
-        public List<AlumnoGrupo> ListaAlumnoGrupo(ref string mensaje, ref string mensajeC)
+        public List<AlumnoGrupo> ListaAlumnoGrupo()
         {
             string comandoMySql = "select * from AlumnoGrupo;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -185,7 +181,7 @@ namespace Acceso_a_Datos
 
             List<AlumnoGrupo> listaAlumnoGrupo = new List<AlumnoGrupo>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];
@@ -205,7 +201,7 @@ namespace Acceso_a_Datos
 
         }
 
-        public List<Carrera> ListaCarrera(ref string mensaje, ref string mensajeC)
+        public List<Carrera> ListaCarrera()
         {
             string comandoMySql = "select * from Carrera;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -213,7 +209,7 @@ namespace Acceso_a_Datos
 
             List<Carrera> listaCarrera = new List<Carrera>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];
@@ -230,7 +226,7 @@ namespace Acceso_a_Datos
 
         }
 
-        public List<Cuatrimestre> ListaCuatrimestre(ref string mensaje, ref string mensajeC)
+        public List<Cuatrimestre> ListaCuatrimestre()
         {
             string comandoMySql = "select * from Cuatrimestre;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -238,7 +234,7 @@ namespace Acceso_a_Datos
 
             List<Cuatrimestre> lista_Cuatrimestre = new List<Cuatrimestre>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];
@@ -259,7 +255,7 @@ namespace Acceso_a_Datos
 
         }
 
-        public List<EstadoCivil> ListaEstadoCivil(ref string mensaje, ref string mensajeC)
+        public List<EstadoCivil> ListaEstadoCivil()
         {
             string comandoMySql = "select * from EstadoCivil;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -267,7 +263,7 @@ namespace Acceso_a_Datos
 
             List<EstadoCivil> lista_EstadoCivil = new List<EstadoCivil>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];
@@ -285,7 +281,7 @@ namespace Acceso_a_Datos
 
         }
 
-        public List<Grupo> ListaGrupo(ref string mensaje, ref string mensajeC)
+        public List<Grupo> ListaGrupo()
         {
             string comandoMySql = "select * from Grupo;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -293,7 +289,7 @@ namespace Acceso_a_Datos
 
             List<Grupo> listaGrupo = new List<Grupo>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];
@@ -312,7 +308,7 @@ namespace Acceso_a_Datos
 
         }
 
-        public List<GrupoCuatrimestre> ListaGrupoCuatrimestre(ref string mensaje, ref string mensajeC)
+        public List<GrupoCuatrimestre> ListaGrupoCuatrimestre()
         {
             string comandoMySql = "select * from GrupoCuatrimestre;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -320,7 +316,7 @@ namespace Acceso_a_Datos
 
             List<GrupoCuatrimestre> lista_GrupoCuatrimestre = new List<GrupoCuatrimestre>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];
@@ -342,7 +338,7 @@ namespace Acceso_a_Datos
 
         }
 
-        public List<Incapacidades> ListaIncapacidades(ref string mensaje, ref string mensajeC)
+        public List<Incapacidades> ListaIncapacidades()
         {
             string comandoMySql = "select * from Incapacidades;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -350,7 +346,7 @@ namespace Acceso_a_Datos
 
             List<Incapacidades> lista_Incapacidades = new List<Incapacidades>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];
@@ -370,7 +366,7 @@ namespace Acceso_a_Datos
 
         }
 
-        public List<Medico> ListaMedico(ref string mensaje, ref string mensajeC)
+        public List<Medico> ListaMedico()
         {
             string comandoMySql = "select * from Medico;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -378,7 +374,7 @@ namespace Acceso_a_Datos
 
             List<Medico> lista_Medico = new List<Medico>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];
@@ -402,7 +398,7 @@ namespace Acceso_a_Datos
 
         }
 
-        public List<PositivoAlumno> ListaPositivoAlumno(ref string mensaje, ref string mensajeC)
+        public List<PositivoAlumno> ListaPositivoAlumno()
         {
             string comandoMySql = "select * from PositivoAlumno;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -410,7 +406,7 @@ namespace Acceso_a_Datos
 
             List<PositivoAlumno> lista_PositivoAlumno = new List<PositivoAlumno>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];
@@ -433,7 +429,7 @@ namespace Acceso_a_Datos
 
         }
 
-        public List<PositivoProfe> ListaPositivoProfe(ref string mensaje, ref string mensajeC)
+        public List<PositivoProfe> ListaPositivoProfe()
         {
             string comandoMySql = "select * from PositivoProfe;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -441,7 +437,7 @@ namespace Acceso_a_Datos
 
             List<PositivoProfe> lista_PositivoProfe = new List<PositivoProfe>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];
@@ -464,7 +460,7 @@ namespace Acceso_a_Datos
 
         }
 
-        public List<ProfeGrupo> ListaProfeGrupo(ref string mensaje, ref string mensajeC)
+        public List<ProfeGrupo> ListaProfeGrupo()
         {
             string comandoMySql = "select * from ProfeGRupo;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -472,7 +468,7 @@ namespace Acceso_a_Datos
 
             List<ProfeGrupo> lista_ProfeGrupo = new List<ProfeGrupo>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];
@@ -492,7 +488,7 @@ namespace Acceso_a_Datos
 
         }
 
-        public List<Profesor> ListaProfesor(ref string mensaje, ref string mensajeC)
+        public List<Profesor> ListaProfesor()
         {
             string comandoMySql = "select * from Profesor;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -500,7 +496,7 @@ namespace Acceso_a_Datos
 
             List<Profesor> lista_Profesor = new List<Profesor>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];
@@ -525,7 +521,7 @@ namespace Acceso_a_Datos
 
         }
 
-        public List<ProgramaEducativo> ListaProgramaEducativo(ref string mensaje, ref string mensajeC)
+        public List<ProgramaEducativo> ListaProgramaEducativo()
         {
             string comandoMySql = "select * from ProgramaEducativo;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -533,7 +529,7 @@ namespace Acceso_a_Datos
 
             List<ProgramaEducativo> lista_ProgramaEducativo = new List<ProgramaEducativo>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];
@@ -552,7 +548,7 @@ namespace Acceso_a_Datos
 
         }
 
-        public List<SeguimientoPro> ListaSeguimientoPro(ref string mensaje, ref string mensajeC)
+        public List<SeguimientoPro> ListaSeguimientoPro()
         {
             string comandoMySql = "select * from SeguimientoPRO;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -560,7 +556,7 @@ namespace Acceso_a_Datos
 
             List<SeguimientoPro> lista_SeguimientoPro = new List<SeguimientoPro>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];
@@ -583,7 +579,7 @@ namespace Acceso_a_Datos
 
         }
 
-        public List<SeguimientoAl> ListaSeguimientoAl(ref string mensaje, ref string mensajeC)
+        public List<SeguimientoAl> ListaSeguimientoAl()
         {
             string comandoMySql = "select * from SeguimientoAL;", etiqueta = "SeguimientoCovid";
             DataSet dataSet = null;
@@ -591,7 +587,7 @@ namespace Acceso_a_Datos
 
             List<SeguimientoAl> lista_SeguimientoAl = new List<SeguimientoAl>();
 
-            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(ref mensajeC), ref mensaje, etiqueta);
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
             if (dataSet != null)
             {
                 dataTable = dataSet.Tables[0];

@@ -52,6 +52,8 @@ namespace Seguimineto_COVID
             List<SeguimientoPro> ListaSeguimientoPro = Interfaz.ListaSeguimientoPro(ref mensaje, ref mensajeC);
             List<SeguimientoAl> ListaSeguimientoAl = Interfaz.ListaSeguimientoAl(ref mensaje, ref mensajeC);
 
+            string estadoCivil = "";
+
             for (int i = 0; i < listaAlumno.Count; i++)
             {
                 ListBox1.Items.Add("//////");
@@ -63,7 +65,10 @@ namespace Seguimineto_COVID
                 ListBox1.Items.Add(listaAlumno[i].Celular.ToString());
                 ListBox1.Items.Add(listaAlumno[i].Correo.ToString());
                 ListBox1.Items.Add(listaAlumno[i].Genero.ToString());
-                ListBox1.Items.Add(listaAlumno[i].FEdoCivil.ToString());
+
+                //ListBox1.Items.Add(listaAlumno[i].FEdoCivil.ToString());
+                estadoCivil = ListaEstadoCivil.Where(x => x.IdEdo == (byte)listaAlumno[i].FEdoCivil).Last().Estado;
+                ListBox1.Items.Add(estadoCivil);
                 ListBox1.Items.Add(listaAlumno[i].FNivel.ToString());
                 ListBox1.Items.Add("//////");
             }
