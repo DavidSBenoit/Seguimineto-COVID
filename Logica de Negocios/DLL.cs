@@ -118,5 +118,23 @@ namespace Logica_de_Negocios
 
         #endregion
 
+        #region Create
+        public String AgregarAlumno(Alumno alumno)
+        {
+            string resp = "";
+            try
+            {
+                DAL.AgregarAlumno(alumno);
+                resp = "Elumno Insertado Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar Alumno";
+            }
+
+            return resp;
+        }
+        #endregion
+
     }
 }

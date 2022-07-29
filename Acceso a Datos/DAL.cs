@@ -34,14 +34,13 @@ namespace Acceso_a_Datos
             return puerto;
         }
 
-        public Boolean BaseSegura(string Sqlinstruc, SqlConnection prAb, ref string mensaje, SqlParameter[] evaluacion)
+        public string BaseSegura(string Sqlinstruc, SqlConnection prAb, SqlParameter[] evaluacion)
         {
-            Boolean resp = false;
+            string resp = "";
             SqlCommand carrito = null;
 
             if (prAb != null)
             {
-                mensaje = "";
                 using (carrito = new SqlCommand())
                 {
                     carrito.CommandText = Sqlinstruc;
@@ -53,13 +52,11 @@ namespace Acceso_a_Datos
                     try
                     {
                         carrito.ExecuteNonQuery();
-                        mensaje = "Se agregaron correctamente";
-                        resp = true;
+                        resp = "Inyección Ejecutada";
                     }
                     catch (Exception h)
                     {
-                        mensaje = "Error : " + h.Message + " !";
-                        resp = false;
+                        resp = "Error: "+ h;
                     }
                 }
                 prAb.Close();
@@ -67,7 +64,7 @@ namespace Acceso_a_Datos
             }
             else
             {
-                mensaje = "Error de Conexión";
+                resp = "Error";
             }
             return resp;
         }
@@ -613,7 +610,38 @@ namespace Acceso_a_Datos
         #endregion
 
         #region Intert
+        public String AgregarAlumno(Alumno alumno)
+        {
+            String respuesta = "";
 
+            string instruccion = "INSERT INTO Alumno(Matricula, Nombre, Ap_pat, Ap_Mat, Genero, Correo, Celular, F_EdoCivil, F_Nivel)" +
+                "values (@Matricula, @Nombre, @Ap_pat, @Ap_Mat, @Genero, @Correo, @Celular, @F_EdoCivil, @F_Nivel);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Matricula", SqlDbType.VarChar, 20),
+                new SqlParameter("@Nombre", SqlDbType.VarChar, 150),
+                new SqlParameter("@Ap_pat", SqlDbType.VarChar, 100),
+                new SqlParameter("@Ap_Mat", SqlDbType.VarChar, 100),
+                new SqlParameter("@Genero", SqlDbType.VarChar, 10),
+                new SqlParameter("@Correo", SqlDbType.VarChar, 200),
+                new SqlParameter("@Celular", SqlDbType.VarChar, 20),
+                new SqlParameter("@F_EdoCivil", SqlDbType.TinyInt),
+                new SqlParameter("@F_Nivel", SqlDbType.TinyInt)
+            };
+            evaluacion[0].Value = alumno.Matricula;
+            evaluacion[1].Value = alumno.Nombre;
+            evaluacion[2].Value = alumno.ApPat;
+            evaluacion[3].Value = alumno.ApMat;
+            evaluacion[4].Value = alumno.Genero;
+            evaluacion[5].Value = alumno.Correo;
+            evaluacion[6].Value = alumno.Celular;
+            evaluacion[7].Value = Convert.ToInt32(alumno.FEdoCivil);
+            evaluacion[8].Value = Convert.ToInt32(alumno.FNivel);
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
         #endregion
 
         #region Update
