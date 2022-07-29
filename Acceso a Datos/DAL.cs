@@ -37,21 +37,21 @@ namespace Acceso_a_Datos
         public string BaseSegura(string Sqlinstruc, SqlConnection prAb, SqlParameter[] evaluacion)
         {
             string resp = "";
-            SqlCommand carrito = null;
+            SqlCommand comando = null;
 
             if (prAb != null)
             {
-                using (carrito = new SqlCommand())
+                using (comando = new SqlCommand())
                 {
-                    carrito.CommandText = Sqlinstruc;
-                    carrito.Connection = prAb;
+                    comando.CommandText = Sqlinstruc;
+                    comando.Connection = prAb;
                     foreach (SqlParameter x in evaluacion)
                     {
-                        carrito.Parameters.Add(x);
+                        comando.Parameters.Add(x);
                     }
                     try
                     {
-                        carrito.ExecuteNonQuery();
+                        comando.ExecuteNonQuery();
                         resp = "Inyección Ejecutada";
                     }
                     catch (Exception h)
@@ -72,18 +72,18 @@ namespace Acceso_a_Datos
         public Boolean BaseSeguraSinParametros(string Sqlinstruc, SqlConnection prAb, ref string mensaje)
         {
             Boolean resp = false;
-            SqlCommand carrito = null;
+            SqlCommand comando = null;
 
             if (prAb != null)
             {
                 mensaje = "";
-                using (carrito = new SqlCommand())
+                using (comando = new SqlCommand())
                 {
-                    carrito.CommandText = Sqlinstruc;
-                    carrito.Connection = prAb;
+                    comando.CommandText = Sqlinstruc;
+                    comando.Connection = prAb;
                     try
                     {
-                        carrito.ExecuteNonQuery();
+                        comando.ExecuteNonQuery();
                         mensaje = "Se agregaron correctamente";
                         resp = true;
                     }
@@ -610,9 +610,10 @@ namespace Acceso_a_Datos
         #endregion
 
         #region Intert
-        public String AgregarAlumno(Alumno alumno)
+
+        public string AgregarAlumno(Alumno alumno)
         {
-            String respuesta = "";
+            string respuesta = "";
 
             string instruccion = "INSERT INTO Alumno(Matricula, Nombre, Ap_pat, Ap_Mat, Genero, Correo, Celular, F_EdoCivil, F_Nivel)" +
                 "values (@Matricula, @Nombre, @Ap_pat, @Ap_Mat, @Genero, @Correo, @Celular, @F_EdoCivil, @F_Nivel);";
@@ -642,6 +643,410 @@ namespace Acceso_a_Datos
 
             return respuesta;
         }
+
+        public string Agregar_AlumnoGrupo(AlumnoGrupo AG)
+        {
+            String respuesta = "";
+
+            string instruccion = "INSERT INTO AlumnoGrupo(F_Alumn, F_GruCuat, Extra, Extra2)" +
+                "values (@F_Alumn, @F_GruCuat, @Extra, @Extra2);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@F_Alumn", SqlDbType.Int),
+                new SqlParameter("@F_GruCuat", SqlDbType.Int),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 50),
+                new SqlParameter("@Extra2", SqlDbType.VarChar, 50),
+                
+            };
+            evaluacion[0].Value = Convert.ToInt32(AG.FAlumn);
+            evaluacion[1].Value = Convert.ToInt32(AG.FGruCuat);
+            evaluacion[2].Value = AG.Extra;
+            evaluacion[3].Value = AG.Extra2;
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Agregar_Carrera(Carrera carrera)
+        {
+            string respuesta = "";
+
+            string instruccion = "INSERT INTO Carrera(nombreCarrera)" +
+                "values (@nombreCarrera);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@nombreCarrea", SqlDbType.NChar, 100)
+                
+            };
+            evaluacion[0].Value = carrera.NombreCarrera;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Agregar_Cuatrimestre(Cuatrimestre cuatrimestre)
+        {
+            string respuesta = "";
+
+            string instruccion = "INSERT INTO Cuatrimestre(Periodo, Anio, Inicio, Fin, Extra)" +
+                "values (@Periodo, @Anio, @Inicio, @Fin, @Extra);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Periodo", SqlDbType.VarChar, 30),
+                new SqlParameter("@Anio", SqlDbType.Int),
+                new SqlParameter("@Inicio", SqlDbType.Date),
+                new SqlParameter("@Fin", SqlDbType.Date),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 50),
+                
+            };
+            evaluacion[0].Value = cuatrimestre.Periodo;
+            evaluacion[1].Value = cuatrimestre.Anio;
+            evaluacion[2].Value = Convert.ToDateTime(cuatrimestre.Inicio);
+            evaluacion[3].Value = Convert.ToDateTime(cuatrimestre.Fin);
+            evaluacion[4].Value = cuatrimestre.Extra;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Agregar_EstadoCivil(EstadoCivil estadoCivil)
+        {
+            string respuesta = "";
+
+            string instruccion = "INSERT INTO EstadoCivil(Estado, Extra)" +
+                "values (@Estado, @Extra);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Estado", SqlDbType.VarChar, 50),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 50),
+              
+            };
+            evaluacion[0].Value = estadoCivil.Estado;
+            evaluacion[1].Value = estadoCivil.Extra;
+            
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Agregar_Grupo(Grupo grupo)
+        {
+            string respuesta = "";
+
+            string instruccion = "INSERT INTO Grupo(Grado, Letra, Extra)" +
+                "values (@Grado, @Letra, @Extra);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Grado", SqlDbType.TinyInt),
+                new SqlParameter("@Letra", SqlDbType.VarChar, 1),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 50),
+                
+
+            };
+            evaluacion[0].Value = Convert.ToInt32(grupo.Grado);
+            evaluacion[1].Value = grupo.Letra;
+            evaluacion[2].Value = grupo.Extra;
+            
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Agregar_Grupo_Cuatrimestre(GrupoCuatrimestre grupoCuatrimestre)
+        {
+            string respuesta = "";
+
+            string instruccion = "INSERT INTO GrupoCuatrimestre(F_ProgEd, F_Grupo, F_Cuatri, Turno, Modalidad, Extra)" +
+                "values (@F_ProgEd, @F_Grupo, @F_Cuatri, @Turno, @Modalidad, @Extra);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@F_ProgEd", SqlDbType.TinyInt),
+                new SqlParameter("@F_Grupo", SqlDbType.SmallInt),
+                new SqlParameter("@F_Cuatri", SqlDbType.SmallInt),
+                new SqlParameter("@Turno", SqlDbType.VarChar, 50),
+                new SqlParameter("@Modalidad", SqlDbType.VarChar, 50),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 50),
+
+
+            };
+            evaluacion[0].Value = Convert.ToInt32(grupoCuatrimestre.FProgEd);
+            evaluacion[1].Value = Convert.ToInt32(grupoCuatrimestre.FGrupo);
+            evaluacion[2].Value = Convert.ToInt32(grupoCuatrimestre.FCuatri);
+            evaluacion[3].Value = grupoCuatrimestre.Turno;
+            evaluacion[4].Value = grupoCuatrimestre.Modalidad;
+            evaluacion[5].Value = grupoCuatrimestre.Extra;
+
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Agregar_Incapacidades(Incapacidades incapacidad)
+        {
+            string respuesta = "";
+
+            string instruccion = "INSERT INTO Incapacidades(Formato, fecha_inicio, fecha_final, Id_posProfe)" +
+                "values (@Formato, @fecha_inicio, @fecha_final, @Id_posProfe);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Formato", SqlDbType.VarChar, 100),
+                new SqlParameter("@fecha_inicio", SqlDbType.DateTime),
+                new SqlParameter("@fecha_final", SqlDbType.DateTime),
+                new SqlParameter("@Id_posProfe", SqlDbType.Int),
+                
+
+
+            };
+            evaluacion[0].Value = incapacidad.Formato;
+            evaluacion[1].Value = incapacidad.FechaInicio;
+            evaluacion[2].Value = incapacidad.FechaFinal;
+            evaluacion[3].Value = incapacidad.IdPosProfe;
+            
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Agregar_Medico(Medico medico)
+        {
+            string respuesta = "";
+
+            string instruccion = "INSERT INTO Medico(Nombre, App, Apm, Telefono, correo, horario, especialidad, extra)" +
+                "values (@Nombre, @App, @Apm, @Telefono, @correo, @horario, @especialidad, @extra);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Nombre", SqlDbType.VarChar, 150),
+                new SqlParameter("@App", SqlDbType.VarChar, 100),
+                new SqlParameter("@Apm", SqlDbType.VarChar, 100),
+                new SqlParameter("@Telefono", SqlDbType.VarChar, 20),
+                new SqlParameter("@correo", SqlDbType.VarChar, 150),
+                new SqlParameter("@horario", SqlDbType.VarChar, 50),
+                new SqlParameter("@especialidad", SqlDbType.VarChar, 150),
+                new SqlParameter("@extra", SqlDbType.VarChar, 150)
+
+
+
+            };
+
+            evaluacion[0].Value = medico.Nombre;
+            evaluacion[1].Value = medico.App;
+            evaluacion[2].Value = medico.Apm;
+            evaluacion[3].Value = medico.Telefono;
+            evaluacion[4].Value = medico.Correo;
+            evaluacion[5].Value = medico.Horario;
+            evaluacion[6].Value = medico.Especialidad;
+            evaluacion[7].Value = medico.Extra;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Agregar_PositivoAlumno(PositivoAlumno posal)
+        {
+            string respuesta = "";
+
+            string instruccion = "INSERT INTO PositivoAlumno(FechaConfirmado, Comprobacion, Antecedentes, Riesgo, NumContagio, Extra, F_Alumno)" +
+                "values (@FechaConfirmado, @Comprobacion, @Antecedentes, @Riesgo, @NumContagio, @Extra, @F_Alumno);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@FechaConfirmado", SqlDbType.Date),
+                new SqlParameter("@Comprobacion", SqlDbType.VarChar, 200),
+                new SqlParameter("@Antecedentes", SqlDbType.VarChar, 200),
+                new SqlParameter("@Riesgo", SqlDbType.VarChar, 100),
+                new SqlParameter("@NumContagio", SqlDbType.TinyInt),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 150),
+                new SqlParameter("@F_Alumno", SqlDbType.Int),
+            };
+
+            evaluacion[0].Value = Convert.ToDateTime(posal.FechaConfirmado);
+            evaluacion[1].Value = posal.Comprobacion;
+            evaluacion[2].Value = posal.Antecedentes;
+            evaluacion[3].Value = posal.Riesgo;
+            evaluacion[4].Value = Convert.ToInt32(posal.NumContagio);
+            evaluacion[5].Value = posal.Extra;
+            evaluacion[6].Value = Convert.ToInt32(posal.FAlumno);
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Agregar_PositivoProfe(PositivoProfe pospro)
+        {
+            string respuesta = "";
+
+            string instruccion = "INSERT INTO PositivoProfe(FechaConfirmado, Comprobacion, Antecedentes, Riesgo, NumContaio, Extra, F_Profe)" +
+                "values (@FechaConfirmado, @Comprobacion, @Antecedentes, @Riesgo, @NumContaio, @Extra, @F_Profe);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@FechaConfirmado", SqlDbType.Date),
+                new SqlParameter("@Comprobacion", SqlDbType.VarChar, 200),
+                new SqlParameter("@Antecedentes", SqlDbType.VarChar, 200),
+                new SqlParameter("@Riesgo", SqlDbType.VarChar, 100),
+                new SqlParameter("@NumContaio", SqlDbType.TinyInt),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 150),
+                new SqlParameter("@F_Profe", SqlDbType.Int),
+            };
+
+            evaluacion[0].Value = Convert.ToDateTime(pospro.FechaConfirmado);
+            evaluacion[1].Value = pospro.Comprobacion;
+            evaluacion[2].Value = pospro.Antecedentes;
+            evaluacion[3].Value = pospro.Riesgo;
+            evaluacion[4].Value = Convert.ToInt32(pospro.NumContaio);
+            evaluacion[5].Value = pospro.Extra;
+            evaluacion[6].Value = Convert.ToInt32(pospro.FProfe);
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Agregar_ProfeGrupo(ProfeGrupo profeGrupo)
+        {
+            string respuesta = "";
+
+            string instruccion = "INSERT INTO ProfeGRupo(F_Profe, F_GruCuat, Extra, Extra2)" +
+                "values (@F_Profe, @F_GruCuat, @Extra, @Extra2);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@F_Profe", SqlDbType.Int),
+                new SqlParameter("@F_GruCuat", SqlDbType.Int),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 50),
+                new SqlParameter("@Extra2", SqlDbType.VarChar, 50),
+            };
+
+            evaluacion[0].Value = Convert.ToInt32(profeGrupo.FProfe);
+            evaluacion[1].Value = Convert.ToInt32(profeGrupo.FGruCuat);
+            evaluacion[2].Value = profeGrupo.Extra;
+            evaluacion[3].Value = profeGrupo.Extra2;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Agregar_Profesor(Profesor profesor)
+        {
+            string respuesta = "";
+
+            string instruccion = "INSERT INTO Profesor(RegistroEmpleado, Nombre, Ap_pat, Ap_mat, Genero, Categoria, Correo, Celular, F_EdoCivil)" +
+                "values (@RegistroEmpleado, @Nombre, @Ap_pat, @Ap_mat, @Genero, @Categoria, @Correo, @Celular, @F_EdoCivil);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@RegistroEmpleado", SqlDbType.Int),
+                new SqlParameter("@Nombre", SqlDbType.VarChar, 150),
+                new SqlParameter("@Ap_pat", SqlDbType.VarChar, 100),
+                new SqlParameter("@Ap_mat", SqlDbType.VarChar, 100),
+                new SqlParameter("@Genero", SqlDbType.VarChar, 10),
+                new SqlParameter("@Categoria", SqlDbType.VarChar, 5),
+                new SqlParameter("@Correo", SqlDbType.VarChar, 200),
+                new SqlParameter("@Celular", SqlDbType.VarChar, 20),
+                new SqlParameter("@F_EdoCivil", SqlDbType.Int),
+            };
+
+            evaluacion[0].Value = profesor.RegistroEmpleado;
+            evaluacion[1].Value = profesor.Nombre;
+            evaluacion[2].Value = profesor.ApPat;
+            evaluacion[3].Value = profesor.ApMat;
+            evaluacion[4].Value = profesor.Genero;
+            evaluacion[5].Value = profesor.Categoria;
+            evaluacion[6].Value = profesor.Correo;
+            evaluacion[7].Value = profesor.Celular;
+            evaluacion[8].Value = profesor.FEdoCivil;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Agregar_ProgramaEducativo(ProgramaEducativo programaEducativo)
+        {
+            string respuesta = "";
+
+            string instruccion = "INSERT INTO ProgramaEducativo(ProgramaEd, F_Carrera, Extra)" +
+                "values (@ProgramaEd, @F_Carrera, @Extra);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@ProgramaEd", SqlDbType.VarChar, 150),
+                new SqlParameter("@F_Carrera", SqlDbType.Int),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 50)
+            };
+
+            evaluacion[0].Value = programaEducativo.ProgramaEd;
+            evaluacion[1].Value = programaEducativo.FCarrera;
+            evaluacion[2].Value = programaEducativo.Extra;
+            
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Agregar_SeguimientoAl(SeguimientoAl seguimientoAl)
+        {
+            string respuesta = "";
+
+            string instruccion = "INSERT INTO SeguimientoAL(F_PositivoAL, F_medico, Fecha, Form_Comunica, Reporte, Entrevista, Extra)" +
+                "values (@F_PositivoAL, @F_medico, @Fecha, @Form_Comunica, @Reporte, @Entrevista, @Extra);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@F_PositivoAL", SqlDbType.Int),
+                new SqlParameter("@F_medico", SqlDbType.Int),
+                new SqlParameter("@Fecha", SqlDbType.Date),
+                new SqlParameter("@Form_Comunica", SqlDbType.VarChar, 50),
+                new SqlParameter("@Reporte", SqlDbType.VarChar, 250),
+                new SqlParameter("@Entrevista", SqlDbType.VarChar, 200),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 150)
+            };
+
+            evaluacion[0].Value = seguimientoAl.FPositivoAl;
+            evaluacion[1].Value = seguimientoAl.FMedico;
+            evaluacion[2].Value = seguimientoAl.Fecha;
+            evaluacion[3].Value = seguimientoAl.FormComunica;
+            evaluacion[4].Value = seguimientoAl.Reporte;
+            evaluacion[5].Value = seguimientoAl.Entrevista;
+            evaluacion[6].Value = seguimientoAl.Extra;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Agregar_SeguimientoPRO(SeguimientoPro seguimientoPro)
+        {
+            string respuesta = "";
+
+            string instruccion = "INSERT INTO SeguimientoPro(F_PositivoProfe, F_medico, Fecha, Form_Comunica, Reporte, Entrevista, Extra)" +
+                "values (@F_PositivoProfe, @F_medico, @Fecha, @Form_Comunica, @Reporte, @Entrevista, @Extra);";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@F_PositivoProfe", SqlDbType.Int),
+                new SqlParameter("@F_medico", SqlDbType.Int),
+                new SqlParameter("@Fecha", SqlDbType.Date),
+                new SqlParameter("@Form_Comunica", SqlDbType.VarChar, 50),
+                new SqlParameter("@Reporte", SqlDbType.VarChar, 250),
+                new SqlParameter("@Entrevista", SqlDbType.VarChar, 200),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 150)
+            };
+
+            evaluacion[0].Value = seguimientoPro.FPositivoProfe;
+            evaluacion[1].Value = seguimientoPro.FMedico;
+            evaluacion[2].Value = seguimientoPro.Fecha;
+            evaluacion[3].Value = seguimientoPro.FormComunica;
+            evaluacion[4].Value = seguimientoPro.Reporte;
+            evaluacion[5].Value = seguimientoPro.Entrevista;
+            evaluacion[6].Value = seguimientoPro.Extra;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
         #endregion
 
         #region Update

@@ -119,7 +119,8 @@ namespace Logica_de_Negocios
         #endregion
 
         #region Create
-        public String AgregarAlumno(Alumno alumno)
+        
+        public string AgregarAlumno(Alumno alumno)
         {
             string resp = "";
             try
@@ -134,6 +135,247 @@ namespace Logica_de_Negocios
 
             return resp;
         }
+
+        public string Agregar_AlumnoGrupo(AlumnoGrupo AG)
+        {
+            string resp = "";
+            try
+            {
+                DAL.Agregar_AlumnoGrupo(AG);
+                resp = "AlumnoGrupo Insertado Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar AlumnoGrupo";
+            }
+
+            return resp;
+        }
+
+        public string Agregar_Carrera(Carrera carrera)
+        {
+            string resp = "";
+            try
+            {
+                DAL.Agregar_Carrera(carrera);
+                resp = "Carrera Insertada Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar Carrera";
+            }
+
+            return resp;
+        }
+
+        public string Agregar_Cuatrimestre(Cuatrimestre cuatrimestre)
+        {
+            string resp = "";
+            try
+            {
+                DAL.Agregar_Cuatrimestre(cuatrimestre);
+                resp = "cuatrimestre Insertado Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar cuatrimestre";
+            }
+
+            return resp;
+        }
+
+        public string Agregar_EstadoCivil(EstadoCivil estadoCivil)
+        {
+            string resp = "";
+            try
+            {
+                DAL.Agregar_EstadoCivil(estadoCivil);
+                resp = "Estado Civil Insertado Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar Estado Civil";
+            }
+
+            return resp;
+        }
+
+        public string Agregar_Grupo(Grupo grupo)
+        {
+            string resp = "";
+            try
+            {
+                DAL.Agregar_Grupo(grupo);
+                resp = "Grupo Insertado Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar Grupo";
+            }
+
+            return resp;
+        }
+
+        public string Agregar_Grupo_Cuatrimestre(GrupoCuatrimestre grupoCuatrimestre)
+        {
+            string resp = "";
+            try
+            {
+                DAL.Agregar_Grupo_Cuatrimestre(grupoCuatrimestre);
+                resp = "grupoCuatrimestre Insertado Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar grupoCuatrimestre";
+            }
+
+            return resp;
+        }
+
+        public string Agregar_Incapacidades(Incapacidades incapacidad)
+        {
+            string resp = "";
+            try
+            {
+                DAL.Agregar_Incapacidades(incapacidad);
+                resp = "incapacidad Insertado Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar incapacidad";
+            }
+
+            return resp;
+        }
+
+        public string Agregar_Medico(Medico medico)
+        {
+            string resp = "";
+            try
+            {
+                DAL.Agregar_Medico(medico);
+                resp = "medico Insertado Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar medico";
+            }
+
+            return resp;
+        }
+
+        public string Agregar_PositivoAlumno(PositivoAlumno posal)
+        {
+            string resp = "";
+            try
+            {
+                DAL.Agregar_PositivoAlumno(posal);
+                resp = "posal Insertado Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar posal";
+            }
+
+            return resp;
+        }
+
+        public string Agregar_PositivoProfe(PositivoProfe pospro)
+        {
+            string resp = "";
+            try
+            {
+                DAL.Agregar_PositivoProfe(pospro);
+                resp = "pospro Insertado Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar pospro";
+            }
+
+            return resp;
+        }
+
+        public string Agregar_ProfeGrupo(ProfeGrupo profeGrupo)
+        {
+            string resp = "";
+            try
+            {
+                DAL.Agregar_ProfeGrupo(profeGrupo);
+                resp = "profeGrupo Insertado Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar profeGrupo";
+            }
+
+            return resp;
+        }
+
+        public string Agregar_Profesor(Profesor profesor)
+        {
+            string resp = "";
+            try
+            {
+                DAL.Agregar_Profesor(profesor);
+                resp = "profesor Insertado Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar profesor";
+            }
+
+            return resp;
+        }
+
+        public string Agregar_ProgramaEducativo(ProgramaEducativo programaEducativo)
+        {
+            string resp = "";
+            try
+            {
+                DAL.Agregar_ProgramaEducativo(programaEducativo);
+                resp = "programaEducativo Insertado Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar programaEducativo";
+            }
+
+            return resp;
+        }
+
+        public string Agregar_SeguimientoAl(SeguimientoAl seguimientoAl)
+        {
+            string resp = "";
+            try
+            {
+                DAL.Agregar_SeguimientoAl(seguimientoAl);
+                resp = "seguimientoAl Insertado Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar seguimientoAl";
+            }
+
+            return resp;
+        }
+
+        public string Agregar_SeguimientoPRO(SeguimientoPro seguimientoPro)
+        {
+            string resp = "";
+            try
+            {
+                DAL.Agregar_SeguimientoPRO(seguimientoPro);
+                resp = "seguimientoPro Insertado Correctamente";
+            }
+            catch
+            {
+                resp = "Error al insertar seguimientoPro";
+            }
+
+            return resp;
+        }
+
         #endregion
 
     }
