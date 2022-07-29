@@ -23,7 +23,7 @@ namespace Entidades
         public string Categoria { get; set; }
         public string Correo { get; set; }
         public string Celular { get; set; }
-        public int FEdoCivil { get; set; }
+        public byte FEdoCivil { get; set; }
 
         public virtual EstadoCivil FEdoCivilNavigation { get; set; }
         public virtual ICollection<PositivoProfe> PositivoProfe { get; set; }

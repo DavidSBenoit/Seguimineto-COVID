@@ -13,8 +13,8 @@ namespace Entidades
             GrupoCuatrimestre = new HashSet<GrupoCuatrimestre>();
         }
 
-        public int IdGrupo { get; set; }
-        public int Grado { get; set; }
+        public short IdGrupo { get; set; }
+        public byte Grado { get; set; }
         public string Letra { get; set; }
         public string Extra { get; set; }
 

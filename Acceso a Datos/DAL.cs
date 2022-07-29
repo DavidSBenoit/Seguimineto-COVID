@@ -16,7 +16,9 @@ namespace Acceso_a_Datos
         {
             cableConn = connection;
         }
+
         #region Conexion
+
         public SqlConnection ConnectionEstablecida(ref string mensajeC)
         {
             SqlConnection puerto = new SqlConnection();
@@ -141,6 +143,7 @@ namespace Acceso_a_Datos
         #endregion
 
         #region Consultas
+
         public List<Alumno> ListaAlumno(ref string mensaje, ref string mensajeC)
         {
             string comandoMySql = "select * from Alumno;", etiqueta = "SeguimientoCovid";
@@ -241,7 +244,7 @@ namespace Acceso_a_Datos
                 dataTable = dataSet.Tables[0];
                 lista_Cuatrimestre = dataTable.AsEnumerable().Select(row => new Cuatrimestre
                 {
-                    //IdCuatrimestre = row.Field<int>("id_Cuatrimestre"),
+                    IdCuatrimestre = row.Field<short>("id_Cuatrimestre"),
                     Periodo = row.Field<string>("Periodo"),
                     Anio = row.Field<int>("Anio"),
                     Inicio = row.Field<DateTime>("Inicio"),
@@ -270,7 +273,7 @@ namespace Acceso_a_Datos
                 dataTable = dataSet.Tables[0];
                 lista_EstadoCivil = dataTable.AsEnumerable().Select(row => new EstadoCivil
                 {
-                    //IdEdo = row.Field<int>("Id_Edo"),
+                    IdEdo = row.Field<byte>("Id_Edo"),
                     Estado = row.Field<string>("Estado"),
                     Extra = row.Field<string>("Extra"),
 
@@ -296,8 +299,8 @@ namespace Acceso_a_Datos
                 dataTable = dataSet.Tables[0];
                 listaGrupo = dataTable.AsEnumerable().Select(row => new Grupo
                 {
-                    //IdGrupo = row.Field<int>("Id_grupo"),
-                    //Grado = row.Field<int>("Grado"),
+                    IdGrupo = row.Field<short>("Id_grupo"),
+                    Grado = row.Field<byte>("Grado"),
                     Letra = row.Field<string>("Letra"),
                     Extra = row.Field<string>("extra"),
 
@@ -323,10 +326,10 @@ namespace Acceso_a_Datos
                 dataTable = dataSet.Tables[0];
                 lista_GrupoCuatrimestre = dataTable.AsEnumerable().Select(row => new GrupoCuatrimestre
                 {
-                    //IdGruCuat = row.Field<int>("Id_GruCuat"),
-                    //FProgEd = row.Field<int>("F_ProgEd"),
-                    //FGrupo = row.Field<int>("F_Grupo"),
-                    //FCuatri = row.Field<int>("F_Cuatri"),
+                    IdGruCuat = row.Field<int>("Id_GruCuat"),
+                    FProgEd = row.Field<byte>("F_ProgEd"),
+                    FGrupo = row.Field<short>("F_Grupo"),
+                    FCuatri = row.Field<short>("F_Cuatri"),
                     Turno = row.Field<string>("Turno"),
                     Modalidad = row.Field<string>("Modalidad"),
                     Extra = row.Field<string>("Extra")
@@ -413,14 +416,14 @@ namespace Acceso_a_Datos
                 dataTable = dataSet.Tables[0];
                 lista_PositivoAlumno = dataTable.AsEnumerable().Select(row => new PositivoAlumno
                 {
-                    //IdPosAl = row.Field<int>("ID_posAl"),
+                    IdPosAl = row.Field<int>("ID_posAl"),
                     FechaConfirmado = row.Field<DateTime>("FechaConfirmado"),
                     Comprobacion = row.Field<string>("Comprobacion"),
                     Antecedentes = row.Field<string>("Antecedentes"),
                     Riesgo = row.Field<string>("Riesgo"),
-                    //NumContagio = row.Field<int>("NumContagio"),
+                    NumContagio = row.Field<byte>("NumContagio"),
                     Extra = row.Field<string>("Extra"),
-                    //FAlumno = row.Field<int>("F_Alumno"),
+                    FAlumno = row.Field<int>("F_Alumno"),
 
                 }).ToList();
 
@@ -444,14 +447,14 @@ namespace Acceso_a_Datos
                 dataTable = dataSet.Tables[0];
                 lista_PositivoProfe = dataTable.AsEnumerable().Select(row => new PositivoProfe
                 {
-                    //IdPosProfe = row.Field<int>("Id_posProfe"),
+                    IdPosProfe = row.Field<int>("Id_posProfe"),
                     FechaConfirmado = row.Field<DateTime>("FechaConfirmado"),
                     Comprobacion = row.Field<string>("Comprobacion"),
                     Antecedentes = row.Field<string>("Antecedentes"),
                     Riesgo = row.Field<string>("Riesgo"),
-                    //NumContaio = row.Field<int>("NumContagio"),
+                    NumContaio = row.Field<byte>("NumContaio"),
                     Extra = row.Field<string>("Extra"),
-                    //FProfe = row.Field<int>("F_Profe"),
+                    FProfe = row.Field<int>("F_Profe"),
 
                 }).ToList();
 
@@ -503,7 +506,7 @@ namespace Acceso_a_Datos
                 dataTable = dataSet.Tables[0];
                 lista_Profesor = dataTable.AsEnumerable().Select(row => new Profesor
                 {
-                    //IdProfe = row.Field<int>("ID_Profe"),
+                    IdProfe = row.Field<int>("ID_Profe"),
                     RegistroEmpleado = row.Field<int>("RegistroEmpleado"),
                     Nombre = row.Field<string>("Nombre"),
                     ApPat = row.Field<string>("Ap_pat"),
@@ -512,7 +515,7 @@ namespace Acceso_a_Datos
                     Categoria = row.Field<string>("Categoria"),
                     Correo = row.Field<string>("Correo"),
                     Celular = row.Field<string>("Celular"),
-                    //FEdoCivil = row.Field<int>("F_EdoCivil"),
+                    FEdoCivil = row.Field<byte>("F_EdoCivil"),
 
                 }).ToList();
 
@@ -536,9 +539,9 @@ namespace Acceso_a_Datos
                 dataTable = dataSet.Tables[0];
                 lista_ProgramaEducativo = dataTable.AsEnumerable().Select(row => new ProgramaEducativo
                 {
-                    //IdPe = row.Field<int>("Id_pe"),
+                    IdPe = row.Field<byte>("Id_pe"),
                     ProgramaEd = row.Field<string>("ProgramaEd"),
-                    //FCarrera = row.Field<int>("F_Carrera"),
+                    FCarrera = row.Field<int>("F_Carrera"),
                     Extra = row.Field<string>("Extra")
 
                 }).ToList();

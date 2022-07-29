@@ -13,7 +13,7 @@ namespace Entidades
             GrupoCuatrimestre = new HashSet<GrupoCuatrimestre>();
         }
 
-        public int IdPe { get; set; }
+        public byte IdPe { get; set; }
         public string ProgramaEd { get; set; }
         public int FCarrera { get; set; }
         public string Extra { get; set; }

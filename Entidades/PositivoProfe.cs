@@ -18,7 +18,7 @@ namespace Entidades
         public string Comprobacion { get; set; }
         public string Antecedentes { get; set; }
         public string Riesgo { get; set; }
-        public int NumContaio { get; set; }
+        public byte NumContaio { get; set; }
         public string Extra { get; set; }
         public int FProfe { get; set; }
 

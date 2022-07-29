@@ -15,9 +15,9 @@ namespace Entidades
         }
 
         public int IdGruCuat { get; set; }
-        public int FProgEd { get; set; }
-        public int FGrupo { get; set; }
-        public int FCuatri { get; set; }
+        public byte FProgEd { get; set; }
+        public short FGrupo { get; set; }
+        public short FCuatri { get; set; }
         public string Turno { get; set; }
         public string Modalidad { get; set; }
         public string Extra { get; set; }

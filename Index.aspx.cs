@@ -100,7 +100,7 @@ namespace Seguimineto_COVID
                 EstadoCivil.Items.Add("/////");
                 EstadoCivil.Items.Add(ListaEstadoCivil[i].IdEdo.ToString());
                 EstadoCivil.Items.Add(ListaEstadoCivil[i].Estado.ToString());
-                //EstadoCivil.Items.Add(ListaEstadoCivil[i].Extra.ToString());
+                EstadoCivil.Items.Add(ListaEstadoCivil[i].Extra.ToString());
                 EstadoCivil.Items.Add("/////");
             }
             for(int i = 0; i< ListaGrupo.Count; i++)
