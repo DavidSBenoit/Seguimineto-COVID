@@ -1536,6 +1536,25 @@ namespace Acceso_a_Datos
         #endregion
 
         #region Delete
+
+        public string EliminarAlumno(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "DELETE From Alumno " +
+                "where ID_Alumno = @ID_Alumno";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@ID_Alumno", SqlDbType.Int)
+            };
+            
+            evaluacion[0].Value = Convert.ToInt32(ID);
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
         #endregion
 
 

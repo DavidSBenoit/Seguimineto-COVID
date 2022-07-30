@@ -285,5 +285,12 @@ namespace Logica_de_Negocios
         }
         #endregion
 
+        #region Delete
+        public string EliminarAlumno(int ID)
+        {
+            return DAL.EliminarAlumno(ID);
+        }
+        #endregion
+
     }
 }
