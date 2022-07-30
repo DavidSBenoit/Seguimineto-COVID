@@ -178,7 +178,7 @@ namespace Seguimineto_COVID
             Label8.Text = Interfaz.Actualizar_Medico(medico, 4);
             Label9.Text = Interfaz.Actualizar_PositivoAlumno(positivoAlumno, 3);
             Label10.Text = Interfaz.Actualizar_PositivoProfe(positivoProfe, 3);
-            abel11.Text = Interfaz.Actualizar_ProfeGrupo(profeGrupo, 9);
+            Label11.Text = Interfaz.Actualizar_ProfeGrupo(profeGrupo, 9);
             Label12.Text = Interfaz.Actualizar_Profesor(profesor, 6);
             Label13.Text = Interfaz.Actualizar_ProgramaEducativo(programaEducativo, 5);
             Label14.Text = Interfaz.Actualizar_SeguimientoAl(seguimientoAl, 3);
