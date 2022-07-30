@@ -183,5 +183,7 @@ namespace Seguimineto_COVID
             Label14.Text = Interfaz.Agregar_SeguimientoAl(seguimientoAl);
             Label15.Text = Interfaz.Agregar_SeguimientoPRO(seguimientoPro);
         }
+
+
     }
 }

@@ -1050,6 +1050,41 @@ namespace Acceso_a_Datos
         #endregion
 
         #region Update
+        public string ActualizarAlumno(Alumno alumno, int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "update Alumno " +
+                "set Matricula = @Matricula, Nombre = @Nombre, Ap_pat = @Ap_pat, Ap_mat = @Ap_mat, Genero = @Genero, Correo = @Correo, Celular = @Celular, F_EdoCivil = @F_EdoCivil, F_Nivel = @F_Nivel " +
+                "where ID_Alumno = @ID_Alumno";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Matricula", SqlDbType.VarChar, 20),
+                new SqlParameter("@Nombre", SqlDbType.VarChar, 150),
+                new SqlParameter("@Ap_pat", SqlDbType.VarChar, 100),
+                new SqlParameter("@Ap_Mat", SqlDbType.VarChar, 100),
+                new SqlParameter("@Genero", SqlDbType.VarChar, 10),
+                new SqlParameter("@Correo", SqlDbType.VarChar, 200),
+                new SqlParameter("@Celular", SqlDbType.VarChar, 20),
+                new SqlParameter("@F_EdoCivil", SqlDbType.TinyInt),
+                new SqlParameter("@F_Nivel", SqlDbType.TinyInt),
+                new SqlParameter("@ID_Alumno", SqlDbType.Int)
+            };
+            evaluacion[0].Value = alumno.Matricula;
+            evaluacion[1].Value = alumno.Nombre;
+            evaluacion[2].Value = alumno.ApPat;
+            evaluacion[3].Value = alumno.ApMat;
+            evaluacion[4].Value = alumno.Genero;
+            evaluacion[5].Value = alumno.Correo;
+            evaluacion[6].Value = alumno.Celular;
+            evaluacion[7].Value = Convert.ToInt32(alumno.FEdoCivil);
+            evaluacion[8].Value = Convert.ToInt32(alumno.FNivel);
+            evaluacion[9].Value = Convert.ToInt32(ID);
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
         #endregion
 
         #region Delete

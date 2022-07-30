@@ -202,5 +202,12 @@ namespace Logica_de_Negocios
 
         #endregion
 
+        #region Update
+        public string ActualizarAlumno(Alumno alumno, int ID)
+        {
+            return DAL.ActualizarAlumno(alumno, ID);
+        }
+        #endregion
+
     }
 }
