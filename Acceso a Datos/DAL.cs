@@ -675,7 +675,7 @@ namespace Acceso_a_Datos
                 "values (@nombreCarrera);";
             SqlParameter[] evaluacion = new SqlParameter[]
             {
-                new SqlParameter("@nombreCarrea", SqlDbType.NChar, 100)
+                new SqlParameter("@nombreCarrera", SqlDbType.VarChar, 100)
                 
             };
             evaluacion[0].Value = carrera.NombreCarrera;

@@ -73,7 +73,6 @@
             <br />
             <asp:Label ID="Label15" runat="server" Text="Label"></asp:Label>
             <br />
-            <asp:Label ID="Label16" runat="server" Text="Label"></asp:Label>
             <br />
         </div>
     </form>
