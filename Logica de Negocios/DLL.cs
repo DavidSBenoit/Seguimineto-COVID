@@ -290,6 +290,82 @@ namespace Logica_de_Negocios
         {
             return DAL.EliminarAlumno(ID);
         }
+
+        public string Eliminar_GrupoAlumno(int ID)
+        {
+            return DAL.Eliminar_GrupoAlumno(ID);
+        }
+
+        public string Eliminar_Carrera(int ID)
+        {
+            return DAL.Eliminar_Carrera(ID);
+        }
+
+        public string Eliminar_Cuatrimestre(int ID)
+        {
+            return DAL.Eliminar_Cuatrimestre(ID);
+        }
+
+        public string Eliminar_EstadoCivil(int ID)
+        {
+            return DAL.Eliminar_EstadoCivil(ID);
+        }
+
+        public string Eliminar_Grupo(int ID)
+        {
+            return DAL.Eliminar_Grupo(ID);
+        }
+
+        public string Eliminar_Grupo_Cuatrimestre(int ID)
+        {
+            return DAL.Eliminar_Grupo_Cuatrimestre(ID);
+        }
+
+        public string Eliminar_Incapacidades(int ID)
+        {
+            return DAL.Eliminar_Incapacidades(ID);
+        }
+
+        public string Eliminar_Medico(int ID)
+        {
+            return DAL.Eliminar_Medico(ID);
+        }
+
+        public string Eliminar_PositivoAlumno(int ID)
+        {
+            return DAL.Eliminar_PositivoAlumno(ID);
+        }
+
+        public string Eliminar_PositivoProfe(int ID)
+        {
+            return DAL.Eliminar_PositivoProfe(ID);
+        }
+
+        public string Eliminar_ProfeGrupo(int ID)
+        {
+            return DAL.Eliminar_ProfeGrupo(ID);
+        }
+
+        public string Eliminar_Profesor(int ID)
+        {
+            return DAL.Eliminar_Profesor(ID);
+        }
+
+        public string Eliminar_ProgramaEducativo(int ID)
+        {
+            return DAL.Eliminar_ProgramaEducativo(ID);
+        }
+
+        public string Eliminar_SeguimientoAl(int ID)
+        {
+            return DAL.Eliminar_SeguimientoAl(ID);
+        }
+
+        public string Eliminar_SeguimientoPRO(int ID)
+        {
+            return DAL.Eliminar_SeguimientoPRO(ID);
+        }
+
         #endregion
 
     }

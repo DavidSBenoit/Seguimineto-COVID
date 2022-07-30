@@ -1555,6 +1555,288 @@ namespace Acceso_a_Datos
             return respuesta;
         }
 
+        public string Eliminar_GrupoAlumno(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "Delete from AlumnoGrupo " +
+                "where ID_AlumnGru = @ID_AlumnGru";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@ID_AlumnGru", SqlDbType.Int),
+
+            };
+            evaluacion[0].Value = ID;
+
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Eliminar_Carrera(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "delete from Carrera " +
+                "where Id_Carrera = @Id_Carrera;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Id_Carrera", SqlDbType.Int)
+
+            };
+            
+            evaluacion[0].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Eliminar_Cuatrimestre(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "delete from Cuatrimestre " +
+                "where id_Cuatrimestre = @id_Cuatrimestre;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@id_Cuatrimestre", SqlDbType.TinyInt),
+
+            };
+
+            evaluacion[0].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Eliminar_EstadoCivil(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "delete from EstadoCivil " +
+                "where Id_Edo = @Id_Edo;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Id_Edo", SqlDbType.TinyInt),
+
+            };
+            
+            evaluacion[0].Value = ID;
+
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Eliminar_Grupo(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "delete from Grupo " +
+                "where Id_Grupo = @Id_Grupo;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Id_Grupo", SqlDbType.SmallInt),
+
+
+            };
+            
+            evaluacion[0].Value = ID;
+
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Eliminar_Grupo_Cuatrimestre(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "delete from GrupoCuatrimestre " +
+                "where Id_GruCuat = @Id_GruCuat;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Id_GruCuat", SqlDbType.Int),
+            };
+            
+            evaluacion[0].Value = ID;
+
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Eliminar_Incapacidades(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "delete from Incapacidades " +
+                "where Id_Incapacidad = @Id_Incapacidad;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Id_Incapacidad", SqlDbType.Int),
+
+
+
+            };
+            
+            evaluacion[0].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Eliminar_Medico(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "delete from Medico " +
+                "where ID_Dr = @ID_Dr;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@ID_Dr", SqlDbType.Int)
+
+            };
+
+            evaluacion[0].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Eliminar_PositivoAlumno(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "delete from PositivoAlumno " +
+                "where ID_posAl = @ID_posAl;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@ID_posAl", SqlDbType.Int),
+            };
+
+            evaluacion[0].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Eliminar_PositivoProfe(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "delete from PositivoProfe " +
+                "where Id_posProfe = @Id_posProfe;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Id_posProfe", SqlDbType.Int),
+            };
+
+            evaluacion[0].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Eliminar_ProfeGrupo(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "delete from ProfeGRupo " +
+                "where ID_ProfeGru = @ID_ProfeGru;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@ID_ProfeGru", SqlDbType.Int),
+            };
+
+            evaluacion[0].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Eliminar_Profesor(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "delete from Profesor " +
+                "where ID_Profe = @ID_Profe;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@ID_Profe", SqlDbType.Int),
+            };
+
+            evaluacion[0].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Eliminar_ProgramaEducativo(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "delete from ProgramaEducativo " +
+                "where Id_pe = @Id_pe;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Id_pe", SqlDbType.TinyInt)
+            };
+
+            evaluacion[0].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Eliminar_SeguimientoAl(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "delete from SeguimientoAL " +
+                "where Id_Seguimiento = @Id_Seguimiento;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Id_Seguimiento", SqlDbType.Int)
+            };
+
+            evaluacion[0].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Eliminar_SeguimientoPRO(int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "delete from SeguimientoPro " +
+                "where id_Segui = @id_Segui;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@id_Segui", SqlDbType.Int)
+            };
+
+            evaluacion[0].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
         #endregion
 
 
