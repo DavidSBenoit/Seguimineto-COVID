@@ -1050,6 +1050,7 @@ namespace Acceso_a_Datos
         #endregion
 
         #region Update
+
         public string ActualizarAlumno(Alumno alumno, int ID)
         {
             string respuesta = "";
@@ -1085,6 +1086,453 @@ namespace Acceso_a_Datos
 
             return respuesta;
         }
+
+        public string Actualizar_GrupoAlumno(AlumnoGrupo alumnoGrupo, int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "update AlumnoGrupo " +
+                "set F_Alumn = @F_Alumn, F_GruCuat = @F_GruCuat, Extra = @Extra, Extra2 = @Extra2 " +
+                "where ID_AlumnGru = @ID_AlumnGru";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@F_Alumn", SqlDbType.Int),
+                new SqlParameter("@F_GruCuat", SqlDbType.Int),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 50),
+                new SqlParameter("@Extra2", SqlDbType.VarChar, 50),
+                new SqlParameter("@ID_AlumnGru", SqlDbType.Int),
+                
+            };
+            evaluacion[0].Value = Convert.ToInt32(alumnoGrupo.FAlumn);
+            evaluacion[1].Value = Convert.ToInt32(alumnoGrupo.FGruCuat);
+            evaluacion[2].Value = alumnoGrupo.Extra;
+            evaluacion[3].Value = alumnoGrupo.Extra2;
+            evaluacion[4].Value = ID;
+            
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Actualizar_Carrera(Carrera carrera, int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "UPDATE Carrera " +
+                "set nombreCarrera = @nombreCarrera " +
+                "where Id_Carrera = @Id_Carrera;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@nombreCarrera", SqlDbType.VarChar, 100),
+                new SqlParameter("@Id_Carrera", SqlDbType.Int)
+
+            };
+            evaluacion[0].Value = carrera.NombreCarrera;
+            evaluacion[1].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Actualizar_Cuatrimestre(Cuatrimestre cuatrimestre, int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "UPDATE Cuatrimestre " +
+                "set Periodo = @Periodo, Anio = @Anio, Inicio = @Inicio, Fin = @Fin, Extra = @Extra " +
+                "where id_Cuatrimestre = @id_Cuatrimestre;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Periodo", SqlDbType.VarChar, 30),
+                new SqlParameter("@Anio", SqlDbType.Int),
+                new SqlParameter("@Inicio", SqlDbType.Date),
+                new SqlParameter("@Fin", SqlDbType.Date),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 50),
+                new SqlParameter("@id_Cuatrimestre", SqlDbType.TinyInt),
+
+            };
+            evaluacion[0].Value = cuatrimestre.Periodo;
+            evaluacion[1].Value = cuatrimestre.Anio;
+            evaluacion[2].Value = Convert.ToDateTime(cuatrimestre.Inicio);
+            evaluacion[3].Value = Convert.ToDateTime(cuatrimestre.Fin);
+            evaluacion[4].Value = cuatrimestre.Extra;
+            evaluacion[5].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Actualizar_EstadoCivil(EstadoCivil estadoCivil, int  ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "Update EstadoCivil " +
+                "set Estado = @Estado, Extra = @Extra " +
+                "where Id_Edo = @Id_Edo;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Estado", SqlDbType.VarChar, 50),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 50),
+                new SqlParameter("@Id_Edo", SqlDbType.TinyInt),
+
+            };
+            evaluacion[0].Value = estadoCivil.Estado;
+            evaluacion[1].Value = estadoCivil.Extra;
+            evaluacion[2].Value = ID;
+
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Actualizar_Grupo(Grupo grupo, int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "UPDATE Grupo " +
+                "set Grado = @Grado, Letra = @Letra, Extra = @Extra " +
+                "where Id_Grupo = @Id_Grupo;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Grado", SqlDbType.TinyInt),
+                new SqlParameter("@Letra", SqlDbType.VarChar, 1),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 50),
+                new SqlParameter("@Id_Grupo", SqlDbType.SmallInt),
+
+
+            };
+            evaluacion[0].Value = Convert.ToInt32(grupo.Grado);
+            evaluacion[1].Value = grupo.Letra;
+            evaluacion[2].Value = grupo.Extra;
+            evaluacion[3].Value = ID;
+
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Actualizar_Grupo_Cuatrimestre(GrupoCuatrimestre grupoCuatrimestre, int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "UPDATE GrupoCuatrimestre " +
+                "set F_ProgEd = @F_ProgEd, F_Grupo = @F_Grupo, F_Cuatri = @F_Cuatri, Turno = @Turno, Modalidad = @Modalidad, Extra = @Extra " +
+                "where Id_GruCuat = @Id_GruCuat;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@F_ProgEd", SqlDbType.TinyInt),
+                new SqlParameter("@F_Grupo", SqlDbType.SmallInt),
+                new SqlParameter("@F_Cuatri", SqlDbType.SmallInt),
+                new SqlParameter("@Turno", SqlDbType.VarChar, 50),
+                new SqlParameter("@Modalidad", SqlDbType.VarChar, 50),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 50),
+                new SqlParameter("@Id_GruCuat", SqlDbType.Int),
+            };
+            evaluacion[0].Value = Convert.ToInt32(grupoCuatrimestre.FProgEd);
+            evaluacion[1].Value = Convert.ToInt32(grupoCuatrimestre.FGrupo);
+            evaluacion[2].Value = Convert.ToInt32(grupoCuatrimestre.FCuatri);
+            evaluacion[3].Value = grupoCuatrimestre.Turno;
+            evaluacion[4].Value = grupoCuatrimestre.Modalidad;
+            evaluacion[5].Value = grupoCuatrimestre.Extra;
+            evaluacion[6].Value = ID;
+
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Actualizar_Incapacidades(Incapacidades incapacidad, int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "UPDATE Incapacidades " +
+                "set Formato = @Formato, fecha_inicio = @fecha_inicio, fecha_final = @fecha_final, Id_posProfe = @Id_posProfe " +
+                "where Id_Incapacidad = @Id_Incapacidad;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Formato", SqlDbType.VarChar, 100),
+                new SqlParameter("@fecha_inicio", SqlDbType.DateTime),
+                new SqlParameter("@fecha_final", SqlDbType.DateTime),
+                new SqlParameter("@Id_posProfe", SqlDbType.Int),
+                new SqlParameter("@Id_Incapacidad", SqlDbType.Int),
+
+
+
+            };
+            evaluacion[0].Value = incapacidad.Formato;
+            evaluacion[1].Value = incapacidad.FechaInicio;
+            evaluacion[2].Value = incapacidad.FechaFinal;
+            evaluacion[3].Value = incapacidad.IdPosProfe;
+            evaluacion[4].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Actualizar_Medico(Medico medico, int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "UPDATE Medico " +
+                "set Nombre = @Nombre, App = @App, Apm = @Apm, Telefono = @Telefono, correo = @correo, horario = @horario, especialidad = @especialidad, extra = @extra " +
+                "where ID_Dr = @ID_Dr;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@Nombre", SqlDbType.VarChar, 150),
+                new SqlParameter("@App", SqlDbType.VarChar, 100),
+                new SqlParameter("@Apm", SqlDbType.VarChar, 100),
+                new SqlParameter("@Telefono", SqlDbType.VarChar, 20),
+                new SqlParameter("@correo", SqlDbType.VarChar, 150),
+                new SqlParameter("@horario", SqlDbType.VarChar, 50),
+                new SqlParameter("@especialidad", SqlDbType.VarChar, 150),
+                new SqlParameter("@extra", SqlDbType.VarChar, 150),
+                new SqlParameter("@ID_Dr", SqlDbType.Int)
+
+            };
+
+            evaluacion[0].Value = medico.Nombre;
+            evaluacion[1].Value = medico.App;
+            evaluacion[2].Value = medico.Apm;
+            evaluacion[3].Value = medico.Telefono;
+            evaluacion[4].Value = medico.Correo;
+            evaluacion[5].Value = medico.Horario;
+            evaluacion[6].Value = medico.Especialidad;
+            evaluacion[7].Value = medico.Extra;
+            evaluacion[8].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Actualizar_PositivoAlumno(PositivoAlumno posal, int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "UPDATE PositivoAlumno " +
+                "set FechaConfirmado = @FechaConfirmado, Comprobacion = @Comprobacion, Antecedentes = @Antecedentes, Riesgo = @Riesgo, NumContagio = @NumContagio, Extra = @Extra, F_Alumno = @F_Alumno " +
+                "where ID_posAl = @ID_posAl;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@FechaConfirmado", SqlDbType.Date),
+                new SqlParameter("@Comprobacion", SqlDbType.VarChar, 200),
+                new SqlParameter("@Antecedentes", SqlDbType.VarChar, 200),
+                new SqlParameter("@Riesgo", SqlDbType.VarChar, 100),
+                new SqlParameter("@NumContagio", SqlDbType.TinyInt),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 150),
+                new SqlParameter("@F_Alumno", SqlDbType.Int),
+                new SqlParameter("@ID_posAl", SqlDbType.Int),
+            };
+
+            evaluacion[0].Value = Convert.ToDateTime(posal.FechaConfirmado);
+            evaluacion[1].Value = posal.Comprobacion;
+            evaluacion[2].Value = posal.Antecedentes;
+            evaluacion[3].Value = posal.Riesgo;
+            evaluacion[4].Value = Convert.ToInt32(posal.NumContagio);
+            evaluacion[5].Value = posal.Extra;
+            evaluacion[6].Value = Convert.ToInt32(posal.FAlumno);
+            evaluacion[7].Value = ID;
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Actualizar_PositivoProfe(PositivoProfe pospro, int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "UPDATE PositivoProfe " +
+                "set FechaConfirmado = @FechaConfirmado, Comprobacion = @Comprobacion, Antecedentes = @Antecedentes, Riesgo = @Riesgo, NumContaio = @NumContaio, Extra = @Extra, F_Profe = @F_Profe " +
+                "where Id_posProfe = @Id_posProfe;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@FechaConfirmado", SqlDbType.Date),
+                new SqlParameter("@Comprobacion", SqlDbType.VarChar, 200),
+                new SqlParameter("@Antecedentes", SqlDbType.VarChar, 200),
+                new SqlParameter("@Riesgo", SqlDbType.VarChar, 100),
+                new SqlParameter("@NumContaio", SqlDbType.TinyInt),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 150),
+                new SqlParameter("@F_Profe", SqlDbType.Int),
+                new SqlParameter("@Id_posProfe", SqlDbType.Int),
+            };
+
+            evaluacion[0].Value = Convert.ToDateTime(pospro.FechaConfirmado);
+            evaluacion[1].Value = pospro.Comprobacion;
+            evaluacion[2].Value = pospro.Antecedentes;
+            evaluacion[3].Value = pospro.Riesgo;
+            evaluacion[4].Value = Convert.ToInt32(pospro.NumContaio);
+            evaluacion[5].Value = pospro.Extra;
+            evaluacion[6].Value = Convert.ToInt32(pospro.FProfe);
+            evaluacion[7].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Actualizar_ProfeGrupo(ProfeGrupo profeGrupo, int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "UPDATE ProfeGRupo " +
+                "set F_Profe = @F_Profe, F_GruCuat = @F_GruCuat, Extra = @Extra, Extra2 = @Extra2 " +
+                "where ID_ProfeGru = @ID_ProfeGru;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@F_Profe", SqlDbType.Int),
+                new SqlParameter("@F_GruCuat", SqlDbType.Int),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 50),
+                new SqlParameter("@Extra2", SqlDbType.VarChar, 50),
+                new SqlParameter("@ID_ProfeGru", SqlDbType.Int),
+            };
+
+            evaluacion[0].Value = Convert.ToInt32(profeGrupo.FProfe);
+            evaluacion[1].Value = Convert.ToInt32(profeGrupo.FGruCuat);
+            evaluacion[2].Value = profeGrupo.Extra;
+            evaluacion[3].Value = profeGrupo.Extra2;
+            evaluacion[4].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Actualizar_Profesor(Profesor profesor, int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "UPDATE Profesor " +
+                "set RegistroEmpleado = @RegistroEmpleado, Nombre = @Nombre, Ap_pat = @Ap_pat, Ap_mat = @Ap_mat, Genero = @Genero, Categoria = @Categoria, Correo = @Correo, Celular = @Celular, F_EdoCivil = @F_EdoCivil " +
+                "where ID_Profe = @ID_Profe;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@RegistroEmpleado", SqlDbType.Int),
+                new SqlParameter("@Nombre", SqlDbType.VarChar, 150),
+                new SqlParameter("@Ap_pat", SqlDbType.VarChar, 100),
+                new SqlParameter("@Ap_mat", SqlDbType.VarChar, 100),
+                new SqlParameter("@Genero", SqlDbType.VarChar, 10),
+                new SqlParameter("@Categoria", SqlDbType.VarChar, 5),
+                new SqlParameter("@Correo", SqlDbType.VarChar, 200),
+                new SqlParameter("@Celular", SqlDbType.VarChar, 20),
+                new SqlParameter("@F_EdoCivil", SqlDbType.Int),
+                new SqlParameter("@ID_Profe", SqlDbType.Int),
+            };
+
+            evaluacion[0].Value = profesor.RegistroEmpleado;
+            evaluacion[1].Value = profesor.Nombre;
+            evaluacion[2].Value = profesor.ApPat;
+            evaluacion[3].Value = profesor.ApMat;
+            evaluacion[4].Value = profesor.Genero;
+            evaluacion[5].Value = profesor.Categoria;
+            evaluacion[6].Value = profesor.Correo;
+            evaluacion[7].Value = profesor.Celular;
+            evaluacion[8].Value = profesor.FEdoCivil;
+            evaluacion[9].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Actualizar_ProgramaEducativo(ProgramaEducativo programaEducativo, int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "UPDATE ProgramaEducativo " +
+                "set ProgramaEd = @ProgramaEd, F_Carrera = @F_Carrera, Extra = @Extra " +
+                "where Id_pe = @Id_pe;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@ProgramaEd", SqlDbType.VarChar, 150),
+                new SqlParameter("@F_Carrera", SqlDbType.Int),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 50),
+                new SqlParameter("@Id_pe", SqlDbType.TinyInt)
+            };
+
+            evaluacion[0].Value = programaEducativo.ProgramaEd;
+            evaluacion[1].Value = programaEducativo.FCarrera;
+            evaluacion[2].Value = programaEducativo.Extra;
+            evaluacion[3].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Actualizar_SeguimientoAl(SeguimientoAl seguimientoAl, int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "UPDATE SeguimientoAL " +
+                "set F_PositivoAL = @F_PositivoAL, F_medico = @F_medico, Fecha = @Fecha, Form_Comunica = @Form_Comunica, Reporte = @Reporte, Entrevista = @Entrevista, Extra = @Extra " +
+                "where Id_Seguimiento = @Id_Seguimiento;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@F_PositivoAL", SqlDbType.Int),
+                new SqlParameter("@F_medico", SqlDbType.Int),
+                new SqlParameter("@Fecha", SqlDbType.Date),
+                new SqlParameter("@Form_Comunica", SqlDbType.VarChar, 50),
+                new SqlParameter("@Reporte", SqlDbType.VarChar, 250),
+                new SqlParameter("@Entrevista", SqlDbType.VarChar, 200),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 150),
+                new SqlParameter("@Id_Seguimiento", SqlDbType.Int)
+            };
+
+            evaluacion[0].Value = seguimientoAl.FPositivoAl;
+            evaluacion[1].Value = seguimientoAl.FMedico;
+            evaluacion[2].Value = seguimientoAl.Fecha;
+            evaluacion[3].Value = seguimientoAl.FormComunica;
+            evaluacion[4].Value = seguimientoAl.Reporte;
+            evaluacion[5].Value = seguimientoAl.Entrevista;
+            evaluacion[6].Value = seguimientoAl.Extra;
+            evaluacion[7].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+        public string Actualizar_SeguimientoPRO(SeguimientoPro seguimientoPro, int ID)
+        {
+            string respuesta = "";
+
+            string instruccion = "UPDATE SeguimientoPro " +
+                "set F_PositivoProfe = @F_PositivoProfe, F_medico = @F_medico, Fecha = @Fecha, Form_Comunica = @Form_Comunica, Reporte = @Reporte, Entrevista = @Entrevista, Extra = @Extra " +
+                "where id_Segui = @id_Segui;";
+            SqlParameter[] evaluacion = new SqlParameter[]
+            {
+                new SqlParameter("@F_PositivoProfe", SqlDbType.Int),
+                new SqlParameter("@F_medico", SqlDbType.Int),
+                new SqlParameter("@Fecha", SqlDbType.Date),
+                new SqlParameter("@Form_Comunica", SqlDbType.VarChar, 50),
+                new SqlParameter("@Reporte", SqlDbType.VarChar, 250),
+                new SqlParameter("@Entrevista", SqlDbType.VarChar, 200),
+                new SqlParameter("@Extra", SqlDbType.VarChar, 150),
+                new SqlParameter("@id_Segui", SqlDbType.Int)
+            };
+
+            evaluacion[0].Value = seguimientoPro.FPositivoProfe;
+            evaluacion[1].Value = seguimientoPro.FMedico;
+            evaluacion[2].Value = seguimientoPro.Fecha;
+            evaluacion[3].Value = seguimientoPro.FormComunica;
+            evaluacion[4].Value = seguimientoPro.Reporte;
+            evaluacion[5].Value = seguimientoPro.Entrevista;
+            evaluacion[6].Value = seguimientoPro.Extra;
+            evaluacion[7].Value = ID;
+
+            respuesta = BaseSegura(instruccion, ConnectionEstablecida(), evaluacion);
+
+            return respuesta;
+        }
+
+
         #endregion
 
         #region Delete

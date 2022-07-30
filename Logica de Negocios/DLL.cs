@@ -203,9 +203,85 @@ namespace Logica_de_Negocios
         #endregion
 
         #region Update
+
         public string ActualizarAlumno(Alumno alumno, int ID)
         {
             return DAL.ActualizarAlumno(alumno, ID);
+        }
+
+        public string Actualizar_GrupoAlumno(AlumnoGrupo alumnoGrupo, int ID)
+        {
+            return DAL.Actualizar_GrupoAlumno(alumnoGrupo, ID);
+        }
+
+        public string Actualizar_Carrera(Carrera carrera, int ID)
+        {
+            return DAL.Actualizar_Carrera(carrera, ID);
+        }
+
+        public string Actualizar_Cuatrimestre(Cuatrimestre cuatrimestre, int ID)
+        {
+            return DAL.Actualizar_Cuatrimestre(cuatrimestre, ID);
+        }
+
+        public string Actualizar_EstadoCivil(EstadoCivil estadoCivil, int ID) 
+        {
+            return DAL.Actualizar_EstadoCivil(estadoCivil, ID);
+        }
+
+        public string Actualizar_Grupo(Grupo grupo, int ID)
+        {
+            return DAL.Actualizar_Grupo(grupo, ID);
+        }
+
+        public string Actualizar_Grupo_Cuatrimestre(GrupoCuatrimestre grupoCuatrimestre, int ID)
+        {
+            return DAL.Actualizar_Grupo_Cuatrimestre(grupoCuatrimestre, ID);
+        }
+
+        public string Actualizar_Incapacidades(Incapacidades incapacidad, int ID)
+        {
+            return DAL.Actualizar_Incapacidades(incapacidad, ID);
+        }
+
+        public string Actualizar_Medico(Medico medico, int ID)
+        {
+            return DAL.Actualizar_Medico(medico, ID);
+        }
+
+        public string Actualizar_PositivoAlumno(PositivoAlumno posal, int ID)
+        {
+            return DAL.Actualizar_PositivoAlumno(posal, ID);
+        }
+
+        public string Actualizar_PositivoProfe(PositivoProfe pospro, int ID)
+        {
+            return DAL.Actualizar_PositivoProfe(pospro, ID);
+        }
+
+        public string Actualizar_ProfeGrupo(ProfeGrupo profeGrupo, int ID)
+        {
+            return DAL.Actualizar_ProfeGrupo(profeGrupo, ID);
+        }
+
+        public string Actualizar_Profesor(Profesor profesor, int ID)
+        {
+            return DAL.Actualizar_Profesor(profesor, ID);
+        }
+
+        public string Actualizar_ProgramaEducativo(ProgramaEducativo programaEducativo, int ID)
+        {
+            return DAL.Actualizar_ProgramaEducativo(programaEducativo, ID);
+        }
+
+        public string Actualizar_SeguimientoAl(SeguimientoAl seguimientoAl, int ID)
+        {
+            return DAL.Actualizar_SeguimientoAl(seguimientoAl, ID);
+        }
+
+        public string Actualizar_SeguimientoPRO(SeguimientoPro seguimientoPro, int ID)
+        {
+            return DAL.Actualizar_SeguimientoPRO(seguimientoPro, ID);
         }
         #endregion
 
