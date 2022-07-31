@@ -11,7 +11,7 @@ namespace Seguimineto_COVID
 {
 
 
-    public partial class Index1
+    public partial class Alumnos
     {
 
         /// <summary>

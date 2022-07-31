@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Seguimineto_COVID
 {
-    public partial class Index1 : System.Web.UI.Page
+    public partial class Alumnos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

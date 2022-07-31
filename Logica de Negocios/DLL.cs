@@ -36,82 +36,82 @@ namespace Logica_de_Negocios
         //}
 
         #region Consultas
-        public List<Alumno> ListaAlumno(ref string mensaje, ref string mensajeC)
+        public List<Alumno> ListaAlumno()
         {
             return DAL.ListaAlumno();
         }
 
-        public List<AlumnoGrupo> ListaAlumnoGrupo(ref string mensaje, ref string mensajeC)
+        public List<AlumnoGrupo> ListaAlumnoGrupo()
         {
             return DAL.ListaAlumnoGrupo();
         }
 
-        public List<Carrera> ListaCarrera(ref string mensaje, ref string mensajeC)
+        public List<Carrera> ListaCarrera()
         {
             return DAL.ListaCarrera();
         }
         
-        public List<Cuatrimestre> ListaCuatrimestre(ref string mensaje, ref string mensajeC)
+        public List<Cuatrimestre> ListaCuatrimestre()
         {
             return DAL.ListaCuatrimestre();
         }
         
-        public List<EstadoCivil> ListaEstadoCivil(ref string mensaje, ref string mensajeC)
+        public List<EstadoCivil> ListaEstadoCivil()
         {
             return DAL.ListaEstadoCivil();
         }
         
-        public List<Grupo> ListaGrupo(ref string mensaje, ref string mensajeC)
+        public List<Grupo> ListaGrupo()
         {
             return DAL.ListaGrupo();
         }
         
-        public List<GrupoCuatrimestre> ListaGrupoCuatrimestre(ref string mensaje, ref string mensajeC)
+        public List<GrupoCuatrimestre> ListaGrupoCuatrimestre()
         {
             return DAL.ListaGrupoCuatrimestre();
         }
         
-        public List<Incapacidades> ListaIncapacidades(ref string mensaje, ref string mensajeC)
+        public List<Incapacidades> ListaIncapacidades()
         {
             return DAL.ListaIncapacidades();
         }
         
-        public List<Medico> ListaMedico(ref string mensaje, ref string mensajeC)
+        public List<Medico> ListaMedico()
         {
             return DAL.ListaMedico();
         }
         
-        public List<PositivoAlumno> ListaPositivoAlumno(ref string mensaje, ref string mensajeC)
+        public List<PositivoAlumno> ListaPositivoAlumno()
         {
             return DAL.ListaPositivoAlumno();
         }
         
-        public List<PositivoProfe> ListaPositivoProfe(ref string mensaje, ref string mensajeC)
+        public List<PositivoProfe> ListaPositivoProfe()
         {
             return DAL.ListaPositivoProfe();
         }
         
-        public List<ProfeGrupo> ListaProfeGrupo(ref string mensaje, ref string mensajeC)
+        public List<ProfeGrupo> ListaProfeGrupo()
         {
             return DAL.ListaProfeGrupo();
         }
         
-        public List<Profesor> ListaProfesor(ref string mensaje, ref string mensajeC)
+        public List<Profesor> ListaProfesor()
         {
             return DAL.ListaProfesor();
         }
         
-        public List<ProgramaEducativo> ListaProgramaEducativo(ref string mensaje, ref string mensajeC)
+        public List<ProgramaEducativo> ListaProgramaEducativo()
         {
             return DAL.ListaProgramaEducativo();
         }
         
-        public List<SeguimientoPro> ListaSeguimientoPro(ref string mensaje, ref string mensajeC)
+        public List<SeguimientoPro> ListaSeguimientoPro()
         {
             return DAL.ListaSeguimientoPro();
         }
         
-        public List<SeguimientoAl> ListaSeguimientoAl(ref string mensaje, ref string mensajeC)
+        public List<SeguimientoAl> ListaSeguimientoAl()
         {
             return DAL.ListaSeguimientoAl();
         }

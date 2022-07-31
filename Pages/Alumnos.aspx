@@ -1,17 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Seguimineto_COVID.Index1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Alumnos.aspx.cs" Inherits="Seguimineto_COVID.Alumnos" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Alumnos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </head>
 <body>
     <form id="form1" runat="server">
-        <%--nav bar--%>
+        <%--Nav Bar--%>
         <div>
             <nav class="navbar navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
@@ -62,7 +62,14 @@
         </div>
         <br />
         <br />
+        <br />
         <%--pagina--%>
+        <div class="container">
+            <div class="col-md-12">
+                <a href="/Pages/Registar_Alumno.aspx" class="btn btn-primary" tabindex="-1" role="button" >Agregar Alumno</a>
+                <a href="/Pages/Mostrar_Alumnos.aspx" class="btn btn-primary" tabindex="-1" role="button" >Mostrar Alumnos Registrados</a>
+            </div>
+        </div>
     </form>
 </body>
 </html>
