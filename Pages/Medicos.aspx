@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Agregar_Profesor.aspx.cs" Inherits="Seguimineto_COVID.Pages.Agregar_Profesor" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Medicos.aspx.cs" Inherits="Seguimineto_COVID.Pages.Medicos" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Agregar Profesor</title>
+    <title>Médicos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </head>
@@ -63,40 +63,13 @@
         <br />
         <br />
         <br />
-        <%--Pagina--%>
-        <h2>Registrar nuevo Profesor</h2>
-        <p>Ingrese los datos</p>
-        <p>Registro de Empleado:</p>
-        <asp:TextBox ID="TextBox_registro" runat="server"></asp:TextBox>
-        
-        <p>Nombre(s):</p>
-        <asp:TextBox ID="TextBox_nombre" runat="server"></asp:TextBox>
-        
-        <p>Apellido Paterno:</p>
-        <asp:TextBox ID="TextBox_app" runat="server"></asp:TextBox>
-        
-        <p>Apellido Materno:</p>
-        <asp:TextBox ID="TextBox_apm" runat="server"></asp:TextBox>
-        
-        <p>Género:</p>
-        <asp:DropDownList ID="DropDownList_Genero" runat="server"></asp:DropDownList>
-
-        <p>Categoría:</p>
-        <asp:DropDownList ID="DropDownList_categoría" runat="server"></asp:DropDownList>
-
-        <p>Coreo:</p>
-        <asp:TextBox ID="TextBox_correo" runat="server"></asp:TextBox>
-        
-        <p>Celular:</p>
-        <asp:TextBox ID="TextBox_calular" runat="server"></asp:TextBox>
-        
-        <p>Estado Civil:</p>
-        <asp:DropDownList ID="DropDownList_edocivil" runat="server"></asp:DropDownList>
-        
-        <br />
-        <asp:Button class="btn btn-primary" ID="Button_agregar_profesor" runat="server" Text="Button" OnClick="Button_agregar_profesor_Click"/>
-         <br />
-         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <%--pagina--%>
+        <div class="container">
+            <div class="col-md-12">
+                <a href="/Pages/Agregar_Medico.aspx" class="btn btn-primary" tabindex="-1" role="button" >Agregar Medico</a>
+                <a href="/Pages/Mostrar_Medicos.aspx" class="btn btn-primary" tabindex="-1" role="button" >Mostrar Medicos Registrados</a>
+            </div>
+        </div>
     </form>
 </body>
 </html>

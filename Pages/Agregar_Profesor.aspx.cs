@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using Entidades;
 using Logica_de_Negocios;
-using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;

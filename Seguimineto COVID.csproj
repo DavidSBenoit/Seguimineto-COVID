@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\Agregar_Medico.aspx" />
     <Content Include="Pages\Agregar_Profesor.aspx" />
     <Content Include="Pages\Alumnos.aspx" />
     <Content Include="Pages\Delete.aspx" />
@@ -75,7 +76,10 @@
     <Content Include="Pages\Ediat_Profesores.aspx" />
     <Content Include="Pages\Editar_Alumno.aspx" />
     <Content Include="Pages\Insertar.aspx" />
+    <Content Include="Pages\Medicos.aspx" />
+    <Content Include="Pages\Modificar_Medico.aspx" />
     <Content Include="Pages\Mostrar_Alumnos.aspx" />
+    <Content Include="Pages\Mostrar_Medicos.aspx" />
     <Content Include="Pages\Mostrar_Profesores.aspx" />
     <Content Include="Pages\Profesores.aspx" />
     <Content Include="Pages\Registar_Alumno.aspx" />
@@ -83,6 +87,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\Agregar_Medico.aspx.cs">
+      <DependentUpon>Agregar_Medico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agregar_Medico.aspx.designer.cs">
+      <DependentUpon>Agregar_Medico.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Agregar_Profesor.aspx.cs">
       <DependentUpon>Agregar_Profesor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -139,12 +150,33 @@
     <Compile Include="Pages\Insertar.aspx.designer.cs">
       <DependentUpon>Insertar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Medicos.aspx.cs">
+      <DependentUpon>Medicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Medicos.aspx.designer.cs">
+      <DependentUpon>Medicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Modificar_Medico.aspx.cs">
+      <DependentUpon>Modificar_Medico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Modificar_Medico.aspx.designer.cs">
+      <DependentUpon>Modificar_Medico.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Mostrar_Alumnos.aspx.cs">
       <DependentUpon>Mostrar_Alumnos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Mostrar_Alumnos.aspx.designer.cs">
       <DependentUpon>Mostrar_Alumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Mostrar_Medicos.aspx.cs">
+      <DependentUpon>Mostrar_Medicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Mostrar_Medicos.aspx.designer.cs">
+      <DependentUpon>Mostrar_Medicos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Mostrar_Profesores.aspx.cs">
       <DependentUpon>Mostrar_Profesores.aspx</DependentUpon>
