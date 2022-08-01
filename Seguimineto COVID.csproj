@@ -75,7 +75,9 @@
     <Content Include="Pages\A_Escolares\Agregar_Profe_Grupo.aspx" />
     <Content Include="Pages\A_Escolares\Agregar_Programa_Edu.aspx" />
     <Content Include="Pages\A_Escolares\Escolares.aspx" />
-    <Content Include="Pages\A_Escolares\Mostrar_Contagios_Profe.aspx" />
+    <Content Include="Pages\A_Medicos\Mostrar_Contagios_Alumno.aspx" />
+    <Content Include="Pages\A_Medicos\Mostrar_Contagios_Alumnos_Grupo.aspx" />
+    <Content Include="Pages\A_Medicos\Mostrar_Contagios_Profe.aspx" />
     <Content Include="Pages\A_Medicos\Agregar_Incapacidad.aspx" />
     <Content Include="Pages\A_Medicos\Agregar_Medico.aspx" />
     <Content Include="Pages\A_Medicos\Positivo_Alumno.aspx" />
@@ -157,11 +159,25 @@
     <Compile Include="Pages\A_Escolares\Escolares.aspx.designer.cs">
       <DependentUpon>Escolares.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\A_Escolares\Mostrar_Contagios_Profe.aspx.cs">
+    <Compile Include="Pages\A_Medicos\Mostrar_Contagios_Alumno.aspx.cs">
+      <DependentUpon>Mostrar_Contagios_Alumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Medicos\Mostrar_Contagios_Alumno.aspx.designer.cs">
+      <DependentUpon>Mostrar_Contagios_Alumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\A_Medicos\Mostrar_Contagios_Alumnos_Grupo.aspx.cs">
+      <DependentUpon>Mostrar_Contagios_Alumnos_Grupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Medicos\Mostrar_Contagios_Alumnos_Grupo.aspx.designer.cs">
+      <DependentUpon>Mostrar_Contagios_Alumnos_Grupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\A_Medicos\Mostrar_Contagios_Profe.aspx.cs">
       <DependentUpon>Mostrar_Contagios_Profe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\A_Escolares\Mostrar_Contagios_Profe.aspx.designer.cs">
+    <Compile Include="Pages\A_Medicos\Mostrar_Contagios_Profe.aspx.designer.cs">
       <DependentUpon>Mostrar_Contagios_Profe.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\A_Medicos\Agregar_Incapacidad.aspx.cs">
