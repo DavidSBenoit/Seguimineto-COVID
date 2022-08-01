@@ -71,6 +71,7 @@
     <Content Include="Pages\A_Medicos\Agregar_Medico.aspx" />
     <Content Include="Pages\A_Medicos\Positivo_Alumno.aspx" />
     <Content Include="Pages\A_Medicos\Positivo_Profe.aspx" />
+    <Content Include="Pages\A_Medicos\Seguimiento_Alumno.aspx" />
     <Content Include="Pages\A_Profesores\Agregar_Profesor.aspx" />
     <Content Include="Pages\A_Alumnos\Alumnos.aspx" />
     <Content Include="Pages\Pruebas\Delete.aspx" />
@@ -117,6 +118,13 @@
     </Compile>
     <Compile Include="Pages\A_Medicos\Positivo_Profe.aspx.designer.cs">
       <DependentUpon>Positivo_Profe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\A_Medicos\Seguimiento_Alumno.aspx.cs">
+      <DependentUpon>Seguimiento_Alumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Medicos\Seguimiento_Alumno.aspx.designer.cs">
+      <DependentUpon>Seguimiento_Alumno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\A_Profesores\Agregar_Profesor.aspx.cs">
       <DependentUpon>Agregar_Profesor.aspx</DependentUpon>
@@ -255,6 +263,9 @@
     <Folder Include="Pages\A_Escolares\" />
     <Folder Include="Pages\A_Medicos\Comprobantes_POSAL\" />
     <Folder Include="Pages\A_Medicos\Comprobantes_POSPRO\" />
+    <Folder Include="Pages\A_Medicos\Forms_Seguimiento_Al\Entrevista\" />
+    <Folder Include="Pages\A_Medicos\Forms_Seguimiento_Al\Form_Comunica\" />
+    <Folder Include="Pages\A_Medicos\Forms_Seguimiento_Al\Reporte\" />
     <Folder Include="Pages\A_Medicos\Incapacidades\" />
   </ItemGroup>
   <PropertyGroup>
