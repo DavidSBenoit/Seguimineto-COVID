@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\A_Medicos\Agregar_Incapacidad.aspx" />
     <Content Include="Pages\A_Medicos\Agregar_Medico.aspx" />
     <Content Include="Pages\A_Medicos\Positivo_Alumno.aspx" />
     <Content Include="Pages\A_Medicos\Positivo_Profe.aspx" />
@@ -89,6 +90,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\A_Medicos\Agregar_Incapacidad.aspx.cs">
+      <DependentUpon>Agregar_Incapacidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Medicos\Agregar_Incapacidad.aspx.designer.cs">
+      <DependentUpon>Agregar_Incapacidad.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\A_Medicos\Agregar_Medico.aspx.cs">
       <DependentUpon>Agregar_Medico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -247,6 +255,7 @@
     <Folder Include="Pages\A_Escolares\" />
     <Folder Include="Pages\A_Medicos\Comprobantes_POSAL\" />
     <Folder Include="Pages\A_Medicos\Comprobantes_POSPRO\" />
+    <Folder Include="Pages\A_Medicos\Incapacidades\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
