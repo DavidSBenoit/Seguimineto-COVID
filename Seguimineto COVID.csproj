@@ -67,6 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\A_Escolares\Agregar_Carrera.aspx" />
+    <Content Include="Pages\A_Escolares\Agregar_cuatrimestre.aspx" />
+    <Content Include="Pages\A_Escolares\Agregar_Grupo.aspx" />
+    <Content Include="Pages\A_Escolares\Agregar_Programa_Edu.aspx" />
+    <Content Include="Pages\A_Escolares\Escolares.aspx" />
     <Content Include="Pages\A_Medicos\Agregar_Incapacidad.aspx" />
     <Content Include="Pages\A_Medicos\Agregar_Medico.aspx" />
     <Content Include="Pages\A_Medicos\Positivo_Alumno.aspx" />
@@ -92,6 +97,41 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\A_Escolares\Agregar_Carrera.aspx.cs">
+      <DependentUpon>Agregar_Carrera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Agregar_Carrera.aspx.designer.cs">
+      <DependentUpon>Agregar_Carrera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Agregar_cuatrimestre.aspx.cs">
+      <DependentUpon>Agregar_cuatrimestre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Agregar_cuatrimestre.aspx.designer.cs">
+      <DependentUpon>Agregar_cuatrimestre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Agregar_Grupo.aspx.cs">
+      <DependentUpon>Agregar_Grupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Agregar_Grupo.aspx.designer.cs">
+      <DependentUpon>Agregar_Grupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Agregar_Programa_Edu.aspx.cs">
+      <DependentUpon>Agregar_Programa_Edu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Agregar_Programa_Edu.aspx.designer.cs">
+      <DependentUpon>Agregar_Programa_Edu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Escolares.aspx.cs">
+      <DependentUpon>Escolares.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Escolares.aspx.designer.cs">
+      <DependentUpon>Escolares.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\A_Medicos\Agregar_Incapacidad.aspx.cs">
       <DependentUpon>Agregar_Incapacidad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -268,7 +308,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\A_Escolares\" />
     <Folder Include="Pages\A_Medicos\Comprobantes_POSAL\" />
     <Folder Include="Pages\A_Medicos\Comprobantes_POSPRO\" />
     <Folder Include="Pages\A_Medicos\Forms_Seguimiento_Al\Entrevista\" />
