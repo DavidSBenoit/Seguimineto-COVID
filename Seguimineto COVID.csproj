@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Home.aspx" />
     <Content Include="Pages\A_Escolares\Agregar_Alumno_Grupo.aspx" />
     <Content Include="Pages\A_Escolares\Agregar_Carrera.aspx" />
     <Content Include="Pages\A_Escolares\Agregar_cuatrimestre.aspx" />
@@ -90,7 +91,6 @@
     <Content Include="Pages\A_Alumnos\Alumnos.aspx" />
     <Content Include="Pages\Pruebas\Delete.aspx" />
     <Content Include="Pages\Pruebas\Consultas.aspx" />
-    <Content Include="Index.aspx" />
     <Content Include="Pages\A_Profesores\Ediat_Profesores.aspx" />
     <Content Include="Pages\A_Alumnos\Editar_Alumno.aspx" />
     <Content Include="Pages\Pruebas\Insertar.aspx" />
@@ -105,6 +105,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\A_Escolares\Agregar_Alumno_Grupo.aspx.cs">
       <DependentUpon>Agregar_Alumno_Grupo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -265,13 +272,6 @@
     </Compile>
     <Compile Include="Pages\Pruebas\Consultas.aspx.designer.cs">
       <DependentUpon>Consultas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\A_Profesores\Ediat_Profesores.aspx.cs">
       <DependentUpon>Ediat_Profesores.aspx</DependentUpon>
