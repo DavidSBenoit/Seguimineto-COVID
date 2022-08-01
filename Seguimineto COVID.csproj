@@ -67,59 +67,67 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Pages\Agregar_Medico.aspx" />
-    <Content Include="Pages\Agregar_Profesor.aspx" />
-    <Content Include="Pages\Alumnos.aspx" />
-    <Content Include="Pages\Delete.aspx" />
-    <Content Include="Pages\Consultas.aspx" />
+    <Content Include="Pages\A_Medicos\Agregar_Medico.aspx" />
+    <Content Include="Pages\A_Medicos\Positivo_Alumno.aspx" />
+    <Content Include="Pages\A_Profesores\Agregar_Profesor.aspx" />
+    <Content Include="Pages\A_Alumnos\Alumnos.aspx" />
+    <Content Include="Pages\Pruebas\Delete.aspx" />
+    <Content Include="Pages\Pruebas\Consultas.aspx" />
     <Content Include="Index.aspx" />
-    <Content Include="Pages\Ediat_Profesores.aspx" />
-    <Content Include="Pages\Editar_Alumno.aspx" />
-    <Content Include="Pages\Insertar.aspx" />
-    <Content Include="Pages\Medicos.aspx" />
-    <Content Include="Pages\Modificar_Medico.aspx" />
-    <Content Include="Pages\Mostrar_Alumnos.aspx" />
-    <Content Include="Pages\Mostrar_Medicos.aspx" />
-    <Content Include="Pages\Mostrar_Profesores.aspx" />
-    <Content Include="Pages\Profesores.aspx" />
-    <Content Include="Pages\Registar_Alumno.aspx" />
-    <Content Include="Pages\Update.aspx" />
+    <Content Include="Pages\A_Profesores\Ediat_Profesores.aspx" />
+    <Content Include="Pages\A_Alumnos\Editar_Alumno.aspx" />
+    <Content Include="Pages\Pruebas\Insertar.aspx" />
+    <Content Include="Pages\A_Medicos\Medicos.aspx" />
+    <Content Include="Pages\A_Medicos\Modificar_Medico.aspx" />
+    <Content Include="Pages\A_Alumnos\Mostrar_Alumnos.aspx" />
+    <Content Include="Pages\A_Medicos\Mostrar_Medicos.aspx" />
+    <Content Include="Pages\A_Profesores\Mostrar_Profesores.aspx" />
+    <Content Include="Pages\A_Profesores\Profesores.aspx" />
+    <Content Include="Pages\A_Alumnos\Registar_Alumno.aspx" />
+    <Content Include="Pages\Pruebas\Update.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\Agregar_Medico.aspx.cs">
+    <Compile Include="Pages\A_Medicos\Agregar_Medico.aspx.cs">
       <DependentUpon>Agregar_Medico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Agregar_Medico.aspx.designer.cs">
+    <Compile Include="Pages\A_Medicos\Agregar_Medico.aspx.designer.cs">
       <DependentUpon>Agregar_Medico.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Agregar_Profesor.aspx.cs">
+    <Compile Include="Pages\A_Medicos\Positivo_Alumno.aspx.cs">
+      <DependentUpon>Positivo_Alumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Medicos\Positivo_Alumno.aspx.designer.cs">
+      <DependentUpon>Positivo_Alumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\A_Profesores\Agregar_Profesor.aspx.cs">
       <DependentUpon>Agregar_Profesor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Agregar_Profesor.aspx.designer.cs">
+    <Compile Include="Pages\A_Profesores\Agregar_Profesor.aspx.designer.cs">
       <DependentUpon>Agregar_Profesor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Alumnos.aspx.cs">
+    <Compile Include="Pages\A_Alumnos\Alumnos.aspx.cs">
       <DependentUpon>Alumnos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Alumnos.aspx.designer.cs">
+    <Compile Include="Pages\A_Alumnos\Alumnos.aspx.designer.cs">
       <DependentUpon>Alumnos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Delete.aspx.cs">
+    <Compile Include="Pages\Pruebas\Delete.aspx.cs">
       <DependentUpon>Delete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Delete.aspx.designer.cs">
+    <Compile Include="Pages\Pruebas\Delete.aspx.designer.cs">
       <DependentUpon>Delete.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Consultas.aspx.cs">
+    <Compile Include="Pages\Pruebas\Consultas.aspx.cs">
       <DependentUpon>Consultas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Consultas.aspx.designer.cs">
+    <Compile Include="Pages\Pruebas\Consultas.aspx.designer.cs">
       <DependentUpon>Consultas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
@@ -129,82 +137,82 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Ediat_Profesores.aspx.cs">
+    <Compile Include="Pages\A_Profesores\Ediat_Profesores.aspx.cs">
       <DependentUpon>Ediat_Profesores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Ediat_Profesores.aspx.designer.cs">
+    <Compile Include="Pages\A_Profesores\Ediat_Profesores.aspx.designer.cs">
       <DependentUpon>Ediat_Profesores.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Editar_Alumno.aspx.cs">
+    <Compile Include="Pages\A_Alumnos\Editar_Alumno.aspx.cs">
       <DependentUpon>Editar_Alumno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Editar_Alumno.aspx.designer.cs">
+    <Compile Include="Pages\A_Alumnos\Editar_Alumno.aspx.designer.cs">
       <DependentUpon>Editar_Alumno.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Insertar.aspx.cs">
+    <Compile Include="Pages\Pruebas\Insertar.aspx.cs">
       <DependentUpon>Insertar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Insertar.aspx.designer.cs">
+    <Compile Include="Pages\Pruebas\Insertar.aspx.designer.cs">
       <DependentUpon>Insertar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Medicos.aspx.cs">
+    <Compile Include="Pages\A_Medicos\Medicos.aspx.cs">
       <DependentUpon>Medicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Medicos.aspx.designer.cs">
+    <Compile Include="Pages\A_Medicos\Medicos.aspx.designer.cs">
       <DependentUpon>Medicos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Modificar_Medico.aspx.cs">
+    <Compile Include="Pages\A_Medicos\Modificar_Medico.aspx.cs">
       <DependentUpon>Modificar_Medico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Modificar_Medico.aspx.designer.cs">
+    <Compile Include="Pages\A_Medicos\Modificar_Medico.aspx.designer.cs">
       <DependentUpon>Modificar_Medico.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Mostrar_Alumnos.aspx.cs">
+    <Compile Include="Pages\A_Alumnos\Mostrar_Alumnos.aspx.cs">
       <DependentUpon>Mostrar_Alumnos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Mostrar_Alumnos.aspx.designer.cs">
+    <Compile Include="Pages\A_Alumnos\Mostrar_Alumnos.aspx.designer.cs">
       <DependentUpon>Mostrar_Alumnos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Mostrar_Medicos.aspx.cs">
+    <Compile Include="Pages\A_Medicos\Mostrar_Medicos.aspx.cs">
       <DependentUpon>Mostrar_Medicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Mostrar_Medicos.aspx.designer.cs">
+    <Compile Include="Pages\A_Medicos\Mostrar_Medicos.aspx.designer.cs">
       <DependentUpon>Mostrar_Medicos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Mostrar_Profesores.aspx.cs">
+    <Compile Include="Pages\A_Profesores\Mostrar_Profesores.aspx.cs">
       <DependentUpon>Mostrar_Profesores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Mostrar_Profesores.aspx.designer.cs">
+    <Compile Include="Pages\A_Profesores\Mostrar_Profesores.aspx.designer.cs">
       <DependentUpon>Mostrar_Profesores.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Profesores.aspx.cs">
+    <Compile Include="Pages\A_Profesores\Profesores.aspx.cs">
       <DependentUpon>Profesores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Profesores.aspx.designer.cs">
+    <Compile Include="Pages\A_Profesores\Profesores.aspx.designer.cs">
       <DependentUpon>Profesores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pages\Registar_Alumno.aspx.cs">
+    <Compile Include="Pages\A_Alumnos\Registar_Alumno.aspx.cs">
       <DependentUpon>Registar_Alumno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Registar_Alumno.aspx.designer.cs">
+    <Compile Include="Pages\A_Alumnos\Registar_Alumno.aspx.designer.cs">
       <DependentUpon>Registar_Alumno.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Update.aspx.cs">
+    <Compile Include="Pages\Pruebas\Update.aspx.cs">
       <DependentUpon>Update.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Update.aspx.designer.cs">
+    <Compile Include="Pages\Pruebas\Update.aspx.designer.cs">
       <DependentUpon>Update.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -226,6 +234,10 @@
       <Project>{4069473B-670F-441B-B8C1-FC140460CF4F}</Project>
       <Name>Logica de Negocios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\A_Escolares\" />
+    <Folder Include="Pages\A_Medicos\Comprobantes_POSAL\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
