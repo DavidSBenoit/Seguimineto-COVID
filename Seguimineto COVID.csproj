@@ -83,7 +83,9 @@
     <Content Include="Pages\A_Medicos\Positivo_Alumno.aspx" />
     <Content Include="Pages\A_Medicos\Positivo_Profe.aspx" />
     <Content Include="Pages\A_Medicos\Seguimiento_Alumno.aspx" />
+    <Content Include="Pages\A_Medicos\Seguimiento_Alumno_cuatri.aspx" />
     <Content Include="Pages\A_Medicos\Seguimiento_Profe.aspx" />
+    <Content Include="Pages\A_Medicos\Seguimiento_Profe2.aspx" />
     <Content Include="Pages\A_Profesores\Agregar_Profesor.aspx" />
     <Content Include="Pages\A_Alumnos\Alumnos.aspx" />
     <Content Include="Pages\Pruebas\Delete.aspx" />
@@ -215,12 +217,26 @@
     <Compile Include="Pages\A_Medicos\Seguimiento_Alumno.aspx.designer.cs">
       <DependentUpon>Seguimiento_Alumno.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\A_Medicos\Seguimiento_Alumno_cuatri.aspx.cs">
+      <DependentUpon>Seguimiento_Alumno_cuatri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Medicos\Seguimiento_Alumno_cuatri.aspx.designer.cs">
+      <DependentUpon>Seguimiento_Alumno_cuatri.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\A_Medicos\Seguimiento_Profe.aspx.cs">
       <DependentUpon>Seguimiento_Profe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\A_Medicos\Seguimiento_Profe.aspx.designer.cs">
       <DependentUpon>Seguimiento_Profe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\A_Medicos\Seguimiento_Profe2.aspx.cs">
+      <DependentUpon>Seguimiento_Profe2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Medicos\Seguimiento_Profe2.aspx.designer.cs">
+      <DependentUpon>Seguimiento_Profe2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\A_Profesores\Agregar_Profesor.aspx.cs">
       <DependentUpon>Agregar_Profesor.aspx</DependentUpon>

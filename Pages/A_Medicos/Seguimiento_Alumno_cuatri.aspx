@@ -1,18 +1,18 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Seguimiento_Alumno.aspx.cs" Inherits="Seguimineto_COVID.Pages.A_Medicos.Seguimiento_Alumno" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Seguimiento_Alumno_cuatri.aspx.cs" Inherits="Seguimineto_COVID.Pages.A_Medicos.Seguimiento_Alumno_cuatri" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Seguimiento de Alumno</title>
+    <title>Seguimiento Alumno por Cuatri</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
 </head>
 <body>
     <form id="form1" runat="server">
-               <%--nav bar--%>
+         <%--nav bar--%>
         <div>
             <nav class="navbar navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
@@ -63,34 +63,18 @@
         <br />
         <br />
         <%--Pagina--%>
-        <h2>Seguimiento a Alumno con Caso Positivo</h2>
-        <p>Ingrese los datos</p>
+        <div class="Com-md-12">
+            
+            <p>Selecciona un Cuatrimestre</p>
+            <asp:DropDownList ID="DropDownList_Cuatri" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList_Cuatri_SelectedIndexChanged"></asp:DropDownList>
+            
+            <p>Seleccione un Alumno (Matrícula)</p>
+            <asp:DropDownList ID="DropDownList_Alumn" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList_Alumn_SelectedIndexChanged"></asp:DropDownList>
 
-        <p>Seleccione caso positivo de Alumno:</p>
-        <asp:DropDownList ID="DropDownList_select_alumn" runat="server"></asp:DropDownList>
+            
 
-        <p>Seleccione médico que dará seguimiento</p>
-        <asp:DropDownList ID="DropDownList_Select_Medico" runat="server"></asp:DropDownList>
-
-        <p>Fecha de Seguimiento</p>
-        <asp:Calendar ID="Calendar_fecha" runat="server"></asp:Calendar>
-
-        <p>Formato de Seguimiento</p>
-        <asp:FileUpload ID="FileUpload_Comunica" runat="server" />
-        <p>Solo formatos .PDF o .JPG</p>
-
-        <p>Formato de Reporte de Seguimeinto</p>
-        <asp:FileUpload ID="FileUpload_reporte" runat="server" />
-        <p>Solo formatos .PDF o .JPG</p>
-
-        <p>Formato de Entrevista</p>
-        <asp:FileUpload ID="FileUpload_Entrevista" runat="server" />
-        <p>Solo formatos .PDF o .JPG</p>
-
-        <asp:Button ID="Button_guardar_seguimeinto" runat="server" Text="Button" OnClick="Button_guardar_seguimeinto_Click" />
-        <br />
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-
+            <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+        </div>
     </form>
 </body>
 </html>

@@ -12,7 +12,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-         <%--Nav Bar--%>
+                <%--nav bar--%>
         <div>
             <nav class="navbar navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
@@ -30,28 +30,26 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/Pages/alumnos.aspx">Alumnos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Profesores</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Médicos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Escolares</a>
-                                </li>
+                                
                                 <li class="nav-item dropdown">
+                                    <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown
                                     </a>
+
                                     <ul class="dropdown-menu dropdown-menu-dark">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="Pages\A_Alumnos\Alumnos.aspx">Alumnos</a></li>
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        <li><a class="dropdown-item" href="Pages\A_Profesores\Profesores.aspx">Profesores</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="Pages\A_Medicos\Medicos.aspx">Médicos</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="Pages\A_Escolares\Escolares.aspx">Escolares</a></li>
                                     </ul>
                                 </li>
                             </ul>

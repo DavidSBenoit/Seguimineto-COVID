@@ -11,7 +11,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-<%--Nav Bar--%>
+        <%--nav bar--%>
         <div>
             <nav class="navbar navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
@@ -29,28 +29,26 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/Pages/alumnos.aspx">Alumnos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Profesores</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Médicos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Escolares</a>
-                                </li>
+                                
                                 <li class="nav-item dropdown">
+                                    <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown
                                     </a>
+
                                     <ul class="dropdown-menu dropdown-menu-dark">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="Pages\A_Alumnos\Alumnos.aspx">Alumnos</a></li>
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        <li><a class="dropdown-item" href="Pages\A_Profesores\Profesores.aspx">Profesores</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="Pages\A_Medicos\Medicos.aspx">Médicos</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="Pages\A_Escolares\Escolares.aspx">Escolares</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -66,8 +64,20 @@
         <%--pagina--%>
         <div class="container">
             <div class="col-md-12">
-                <a href="/Pages/Agregar_Medico.aspx" class="btn btn-primary" tabindex="-1" role="button" >Agregar Medico</a>
-                <a href="/Pages/Mostrar_Medicos.aspx" class="btn btn-primary" tabindex="-1" role="button" >Mostrar Medicos Registrados</a>
+                <a href="/Pages/A_Medicos/Agregar_Incapacidad.aspx" class="btn btn-primary" tabindex="-1" role="button" >Agregar Incapacidad</a>
+                <a href="/Pages/A_Medicos/Agregar_Medico.aspx" class="btn btn-primary" tabindex="-1" role="button" >Agregar Médico</a>
+                <a href="/Pages/A_Medicos/Modificar_Medico.aspx" class="btn btn-primary" tabindex="-1" role="button" >Modificar Médico</a>
+                <a href="/Pages/A_Medicos/Mostrar_Contagios_Alumno.aspx" class="btn btn-primary" tabindex="-1" role="button" >Mostrar Alumnos Contagiados</a>
+                <a href="/Pages/A_Medicos/Mostrar_Contagios_Alumnos_Grupo.aspx" class="btn btn-primary" tabindex="-1" role="button" >Mostrar Alumnos Contagiados por Grupo</a>
+                <a href="/Pages/A_Medicos/Mostrar_Contagios_Profe.aspx" class="btn btn-primary" tabindex="-1" role="button" >Mostrar Profesores Contagiados<</a>
+                <a href="/Pages/A_Medicos/Mostrar_Medicos.aspx" class="btn btn-primary" tabindex="-1" role="button" >Mostrar Médicos</a>
+                <a href="/Pages/A_Medicos/Positivo_Alumno.aspx" class="btn btn-primary" tabindex="-1" role="button" >Agregar nuevo Positivo Alumno</a>
+                <a href="/Pages/A_Medicos/Positivo_Profe.aspx" class="btn btn-primary" tabindex="-1" role="button" >Agregar nuevo Positivo Profesor</a>
+                <a href="/Pages/A_Medicos/Seguimiento_Alumno.aspx" class="btn btn-primary" tabindex="-1" role="button" >Mostrar Seguimiento a Alumno</a>
+                <a href="/Pages/A_Medicos/Seguimiento_Alumno_Cuatri.aspx" class="btn btn-primary" tabindex="-1" role="button" >Mostrar Seguimiento a Alumno</a>
+                <a href="/Pages/A_Medicos/Seguimiento_Profe.aspx" class="btn btn-primary" tabindex="-1" role="button" >Mostrar Seguimiento a Profesor</a>
+                <a href="/Pages/A_Medicos/Seguimiento_Profe2.aspx" class="btn btn-primary" tabindex="-1" role="button" >Mostrar Seguimiento a Alumno a detalle</a>
+                
             </div>
         </div>
     </form>
