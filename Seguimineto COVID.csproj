@@ -67,9 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\A_Escolares\Agregar_Alumno_Grupo.aspx" />
     <Content Include="Pages\A_Escolares\Agregar_Carrera.aspx" />
     <Content Include="Pages\A_Escolares\Agregar_cuatrimestre.aspx" />
     <Content Include="Pages\A_Escolares\Agregar_Grupo.aspx" />
+    <Content Include="Pages\A_Escolares\Agregar_Grupo_Cuatri.aspx" />
+    <Content Include="Pages\A_Escolares\Agregar_Profe_Grupo.aspx" />
     <Content Include="Pages\A_Escolares\Agregar_Programa_Edu.aspx" />
     <Content Include="Pages\A_Escolares\Escolares.aspx" />
     <Content Include="Pages\A_Medicos\Agregar_Incapacidad.aspx" />
@@ -97,6 +100,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\A_Escolares\Agregar_Alumno_Grupo.aspx.cs">
+      <DependentUpon>Agregar_Alumno_Grupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Agregar_Alumno_Grupo.aspx.designer.cs">
+      <DependentUpon>Agregar_Alumno_Grupo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\A_Escolares\Agregar_Carrera.aspx.cs">
       <DependentUpon>Agregar_Carrera.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -117,6 +127,20 @@
     </Compile>
     <Compile Include="Pages\A_Escolares\Agregar_Grupo.aspx.designer.cs">
       <DependentUpon>Agregar_Grupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Agregar_Grupo_Cuatri.aspx.cs">
+      <DependentUpon>Agregar_Grupo_Cuatri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Agregar_Grupo_Cuatri.aspx.designer.cs">
+      <DependentUpon>Agregar_Grupo_Cuatri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Agregar_Profe_Grupo.aspx.cs">
+      <DependentUpon>Agregar_Profe_Grupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Agregar_Profe_Grupo.aspx.designer.cs">
+      <DependentUpon>Agregar_Profe_Grupo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\A_Escolares\Agregar_Programa_Edu.aspx.cs">
       <DependentUpon>Agregar_Programa_Edu.aspx</DependentUpon>
