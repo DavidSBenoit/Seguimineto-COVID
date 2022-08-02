@@ -1,13 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Escolares.aspx.cs" Inherits="Seguimineto_COVID.Pages.A_Escolares.Escolares" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Modificar_Cuatrimestre.aspx.cs" Inherits="Seguimineto_COVID.Pages.A_Escolares.Modificar_Cuatrimestre" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Escolares</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Modificar Cuatrimestre</title>
+    
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -58,8 +60,6 @@
                 </div>
             </nav>
         </div>
-
-
         <br />
         <br />
         <br />
@@ -69,27 +69,44 @@
             <div class="container-fluid col-xl-8 col-md-12">
                 <div class="card">
                     <div class="card-body centerContent">
-                        <h5 class="card-title">Área de Escolares</h5>
-                        <a href="/Pages/A_Escolares/Agregar_Alumno_Grupo.aspx" class="btn btn-dark" tabindex="-1" role="button">Agregar Alumno Grupo</a>
-                        <a href="/Pages/A_Escolares/Agregar_Carrera.aspx" class="btn btn-dark" tabindex="-1" role="button">Agregar Carrera</a>
-                        <a href="/Pages/A_Escolares/Agregar_Cuatrimestre.aspx" class="btn btn-dark" tabindex="-1" role="button">Agregar Cuatrimestre</a>
+                        <h5 class="card-title">Área de Agregar Cuatrimestre</h5>
+                        <p>Ingresa los Datos</p>
+
+                        <p>Seleccione Cuatrimestre</p>
+                        <asp:DropDownList ID="DropDownList_select_profe" AutoPostBack="true" runat="server" OnSelectedIndexChanged="DropDownList_select_profe_SelectedIndexChanged"></asp:DropDownList>
+
+                        <p>Periodo</p>
+                        <asp:TextBox ID="TextBox_periodo" runat="server"></asp:TextBox>
+                        <br />
+
+                        <p>Año</p>
+                        <asp:TextBox ID="TextBox_anio" runat="server"></asp:TextBox>
                         <br />
                         <br />
-                        <a href="/Pages/A_Escolares/Agregar_Grupo.aspx" class="btn btn-dark" tabindex="-1" role="button">Agregar Grupo</a>
-                        <a href="/Pages/A_Escolares/Agregar_Grupo_Cuatri.aspx" class="btn btn-dark" tabindex="-1" role="button">Agregar Grupo Cuatrimestre</a>
-                        <a href="/Pages/A_Escolares/Agregar_Profe_Grupo.aspx" class="btn btn-dark" tabindex="-1" role="button">Agregar Profesor Grupo</a>
-                        <a href="/Pages/A_Escolares/Agregar_Programa_Edu.aspx" class="btn btn-dark" tabindex="-1" role="button">Agregar Programa Educativo</a>
+                        <p>Fecha de Inicio Registrada</p>
+                        <asp:Label ID="Label_fec_ini" runat="server" Text="Label"></asp:Label>
                         <br />
                         <br />
-                        <a href="/Pages/A_Escolares/Editar_Grupo_Cuatrimestre.aspx" class="btn btn-dark" tabindex="-1" role="button">Editar Grupo Cuatrimestre</a>
-                        <a href="/Pages/A_Escolares/Modificar_Cuatrimestre.aspx" class="btn btn-dark" tabindex="-1" role="button">Modificar Cuatrimestre</a>
-                        <a href="/Pages/A_Escolares/Mostrar_Cuatrimestres.aspx" class="btn btn-dark" tabindex="-1" role="button">Mostrar Cuatrimestre</a>
-                        <a href="/Pages/A_Escolares/Mostrar_Grupo_Cuatri.aspx" class="btn btn-dark" tabindex="-1" role="button">Mostrar Grupo Cuatrimestre</a>
+                        <p>Fecha de Inicio Nueva</p>
+                        <asp:Calendar ID="Calendar_ini" runat="server"></asp:Calendar>
+                        <br />
+                        <p>Fecha de Fin Registrada</p>
+                        <asp:Label ID="Label_fec_fin" runat="server" Text="Label"></asp:Label>
+                        <br />
+                        <br />
+                        <p>Fecha Final nueva</p>
+                        <asp:Calendar ID="Calendar_fin" runat="server" SelectedDayStyle-Font-Bold="true"></asp:Calendar>
+                        <br />
+                        <br />
+                        <asp:Button ID="Button_Actualizar_cuatrimestre" runat="server" Text="Acualizar" class="btn btn-dark" OnClick="Button_Actualizar_cuatrimestre_Click"  />
+                        <asp:Button ID="Button_Eliminar_cuatrimestre" runat="server" Text="Eliminar" class="btn btn-dark" OnClick="Button_Eliminar_cuatrimestre_Click" />
+                        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                     </div>
 
                 </div>
             </div>
         </div>
+
 
     </form>
 </body>

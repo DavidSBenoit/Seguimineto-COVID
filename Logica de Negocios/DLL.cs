@@ -36,6 +36,11 @@ namespace Logica_de_Negocios
         //}
 
         #region Consultas
+
+        public List<ViewGrupoCuatri> listaGrupoCutriView()
+        {
+            return DAL.listaGrupoCutriView();
+        }
         public List<Alumno> ListaAlumno()
         {
             return DAL.ListaAlumno();

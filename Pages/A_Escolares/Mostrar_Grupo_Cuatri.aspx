@@ -1,11 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Escolares.aspx.cs" Inherits="Seguimineto_COVID.Pages.A_Escolares.Escolares" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Mostrar_Grupo_Cuatri.aspx.cs" Inherits="Seguimineto_COVID.Pages.A_Escolares.Mostrar_Grupo_Cuatri" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Escolares</title>
+    <title>Mostrar Grupo Cuatri</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </head>
@@ -58,8 +59,6 @@
                 </div>
             </nav>
         </div>
-
-
         <br />
         <br />
         <br />
@@ -69,27 +68,17 @@
             <div class="container-fluid col-xl-8 col-md-12">
                 <div class="card">
                     <div class="card-body centerContent">
-                        <h5 class="card-title">Área de Escolares</h5>
-                        <a href="/Pages/A_Escolares/Agregar_Alumno_Grupo.aspx" class="btn btn-dark" tabindex="-1" role="button">Agregar Alumno Grupo</a>
-                        <a href="/Pages/A_Escolares/Agregar_Carrera.aspx" class="btn btn-dark" tabindex="-1" role="button">Agregar Carrera</a>
-                        <a href="/Pages/A_Escolares/Agregar_Cuatrimestre.aspx" class="btn btn-dark" tabindex="-1" role="button">Agregar Cuatrimestre</a>
-                        <br />
-                        <br />
-                        <a href="/Pages/A_Escolares/Agregar_Grupo.aspx" class="btn btn-dark" tabindex="-1" role="button">Agregar Grupo</a>
-                        <a href="/Pages/A_Escolares/Agregar_Grupo_Cuatri.aspx" class="btn btn-dark" tabindex="-1" role="button">Agregar Grupo Cuatrimestre</a>
-                        <a href="/Pages/A_Escolares/Agregar_Profe_Grupo.aspx" class="btn btn-dark" tabindex="-1" role="button">Agregar Profesor Grupo</a>
-                        <a href="/Pages/A_Escolares/Agregar_Programa_Edu.aspx" class="btn btn-dark" tabindex="-1" role="button">Agregar Programa Educativo</a>
-                        <br />
-                        <br />
-                        <a href="/Pages/A_Escolares/Editar_Grupo_Cuatrimestre.aspx" class="btn btn-dark" tabindex="-1" role="button">Editar Grupo Cuatrimestre</a>
-                        <a href="/Pages/A_Escolares/Modificar_Cuatrimestre.aspx" class="btn btn-dark" tabindex="-1" role="button">Modificar Cuatrimestre</a>
-                        <a href="/Pages/A_Escolares/Mostrar_Cuatrimestres.aspx" class="btn btn-dark" tabindex="-1" role="button">Mostrar Cuatrimestre</a>
-                        <a href="/Pages/A_Escolares/Mostrar_Grupo_Cuatri.aspx" class="btn btn-dark" tabindex="-1" role="button">Mostrar Grupo Cuatrimestre</a>
+                        <h5 class="card-title">Grupos Cuatrimestres</h5>
+
+                        <%--<asp:GridView ID="GridView1" runat="server"></asp:GridView>--%>
+
+                        <asp:GridView ID="GridView2" runat="server"></asp:GridView>
                     </div>
 
                 </div>
             </div>
         </div>
+
 
     </form>
 </body>

@@ -137,6 +137,32 @@ namespace Acceso_a_Datos
 
         #region Consultas
 
+        public List<ViewGrupoCuatri> listaGrupoCutriView()
+        {
+            string comandoMySql = "select * from ViewGrupoCuatri;", etiqueta = "SeguimientoCovid";
+            DataSet dataSet = null;
+            DataTable dataTable = null;
+
+            List<ViewGrupoCuatri> listaView = new List<ViewGrupoCuatri>();
+
+            dataSet = LecturaSet(comandoMySql, ConnectionEstablecida(), etiqueta);
+            if (dataSet != null)
+            {
+                dataTable = dataSet.Tables[0];
+                listaView = dataTable.AsEnumerable().Select(row => new ViewGrupoCuatri
+                {
+                    IdGruCuat = row.Field<int>("Id_GruCuat"),
+                    ProgramaEd = row.Field<string>("ProgramaEd"),
+                    Grado = row.Field<byte>("Grado"),
+                    Letra = row.Field<string>("Letra"),
+                    Periodo = row.Field<string>("Periodo"),
+                    Turno = row.Field<string>("Turno"),
+                    Modalidad = row.Field<string>("Modalidad"),
+
+                }).ToList();
+            }
+            return listaView;
+        }
         public List<Alumno> ListaAlumno()
         {
             string comandoMySql = "select * from Alumno;", etiqueta = "SeguimientoCovid";

@@ -75,7 +75,11 @@
     <Content Include="Pages\A_Escolares\Agregar_Grupo_Cuatri.aspx" />
     <Content Include="Pages\A_Escolares\Agregar_Profe_Grupo.aspx" />
     <Content Include="Pages\A_Escolares\Agregar_Programa_Edu.aspx" />
+    <Content Include="Pages\A_Escolares\Editar_Grupo_Cuatrimestre.aspx" />
     <Content Include="Pages\A_Escolares\Escolares.aspx" />
+    <Content Include="Pages\A_Escolares\Modificar_Cuatrimestre.aspx" />
+    <Content Include="Pages\A_Escolares\Mostrar_Cuatrimestres.aspx" />
+    <Content Include="Pages\A_Escolares\Mostrar_Grupo_Cuatri.aspx" />
     <Content Include="Pages\A_Medicos\Mostrar_Contagios_Alumno.aspx" />
     <Content Include="Pages\A_Medicos\Mostrar_Contagios_Alumnos_Grupo.aspx" />
     <Content Include="Pages\A_Medicos\Mostrar_Contagios_Profe.aspx" />
@@ -161,12 +165,40 @@
     <Compile Include="Pages\A_Escolares\Agregar_Programa_Edu.aspx.designer.cs">
       <DependentUpon>Agregar_Programa_Edu.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\A_Escolares\Editar_Grupo_Cuatrimestre.aspx.cs">
+      <DependentUpon>Editar_Grupo_Cuatrimestre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Editar_Grupo_Cuatrimestre.aspx.designer.cs">
+      <DependentUpon>Editar_Grupo_Cuatrimestre.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\A_Escolares\Escolares.aspx.cs">
       <DependentUpon>Escolares.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\A_Escolares\Escolares.aspx.designer.cs">
       <DependentUpon>Escolares.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Modificar_Cuatrimestre.aspx.cs">
+      <DependentUpon>Modificar_Cuatrimestre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Modificar_Cuatrimestre.aspx.designer.cs">
+      <DependentUpon>Modificar_Cuatrimestre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Mostrar_Cuatrimestres.aspx.cs">
+      <DependentUpon>Mostrar_Cuatrimestres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Mostrar_Cuatrimestres.aspx.designer.cs">
+      <DependentUpon>Mostrar_Cuatrimestres.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Mostrar_Grupo_Cuatri.aspx.cs">
+      <DependentUpon>Mostrar_Grupo_Cuatri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\A_Escolares\Mostrar_Grupo_Cuatri.aspx.designer.cs">
+      <DependentUpon>Mostrar_Grupo_Cuatri.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\A_Medicos\Mostrar_Contagios_Alumno.aspx.cs">
       <DependentUpon>Mostrar_Contagios_Alumno.aspx</DependentUpon>
