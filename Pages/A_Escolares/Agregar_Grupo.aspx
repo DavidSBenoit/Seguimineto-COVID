@@ -11,11 +11,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <%--nav bar--%>
+<%--nav bar--%>
         <div>
             <nav class="navbar navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Seguimiento de Covid</a>
+                    <a class="navbar-brand" href="..\..\Home.aspx">Seguimiento de Covid</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -27,7 +27,7 @@
                         <div class="offcanvas-body">
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="..\Home.aspx">Home</a>
+                                    <a class="nav-link active" aria-current="page" href="..\..\Home.aspx">Home</a>
                                 </li>
                                 
                                 <li class="nav-item dropdown">
@@ -36,19 +36,19 @@
                                     </a>
 
                                     <ul class="dropdown-menu dropdown-menu-dark">
-                                        <li><a class="dropdown-item" href="..\Pages\A_Alumnos\Alumnos.aspx">Alumnos</a></li>
+                                        <li><a class="dropdown-item" href="..\A_Alumnos\Alumnos.aspx">Alumnos</a></li>
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item" href="..\Pages\A_Profesores\Profesores.aspx">Profesores</a></li>
+                                        <li><a class="dropdown-item" href="..\A_Profesores\Profesores.aspx">Profesores</a></li>
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item" href="..\Pages\A_Medicos\Medicos.aspx">Médicos</a></li>
+                                        <li><a class="dropdown-item" href="..\A_Medicos\Medicos.aspx">Médicos</a></li>
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item" href="..\Pages\A_Escolares\Escolares.aspx">Escolares</a></li>
+                                        <li><a class="dropdown-item" href="..\A_Escolares\Escolares.aspx">Escolares</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -62,10 +62,12 @@
         <br />
         <br />
         <%--pagina--%>
-        <div class="container">
-            <div class="col-md-12">
-                <h2>Agregar Grupo</h2>
-                <p>Ingresa los Datos</p>
+                <div class="content centerContent">
+            <div class="container-fluid col-xl-8 col-md-12">
+                <div class="card">
+                    <div class="card-body centerContent">
+                        <h5 class="card-title">Agregar Grupo</h5>
+                        <p>Ingresa los Datos</p>
 
                 <p>Grado</p>
                 <asp:TextBox ID="TextBox_grado" runat="server"></asp:TextBox>
@@ -74,14 +76,16 @@
                 <p>Letra</p>
                 <asp:TextBox ID="TextBox_letra" runat="server"></asp:TextBox>
                 <br />
-
-                <asp:Button ID="Button_agregar_grupo" runat="server" Text="Button" OnClick="Button_agregar_grupo_Click"/>
+                        <br />
+                <asp:Button ID="Button_agregar_grupo" class="btn btn-dark" runat="server" Text="Agregar" OnClick="Button_agregar_grupo_Click"/>
                 <br />
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                        
+                    </div>
+
+                </div>
             </div>
         </div>
-
-
     </form>
 </body>
 </html>

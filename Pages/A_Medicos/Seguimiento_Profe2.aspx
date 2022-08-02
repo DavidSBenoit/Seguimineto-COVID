@@ -4,19 +4,19 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Seguimiento de Profesor Detalle</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
 </head>
 <body>
     <form id="form1" runat="server">
-                <%--nav bar--%>
+        <%--nav bar--%>
         <div>
             <nav class="navbar navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Seguimiento de Covid</a>
+                    <a class="navbar-brand" href="..\..\Home.aspx">Seguimiento de Covid</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -28,30 +28,30 @@
                         <div class="offcanvas-body">
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="..\Home.aspx">Home</a>
+                                    <a class="nav-link active" aria-current="page" href="..\..\Home.aspx">Home</a>
                                 </li>
-                                
+
                                 <li class="nav-item dropdown">
                                     <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Áreas
-                                    </a>
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Áreas
+                                        </a>
 
-                                    <ul class="dropdown-menu dropdown-menu-dark">
-                                        <li><a class="dropdown-item" href="..\Pages\A_Alumnos\Alumnos.aspx">Alumnos</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="..\Pages\A_Profesores\Profesores.aspx">Profesores</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="..\Pages\A_Medicos\Medicos.aspx">Médicos</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="..\Pages\A_Escolares\Escolares.aspx">Escolares</a></li>
-                                    </ul>
-                                </li>
+                                        <ul class="dropdown-menu dropdown-menu-dark">
+                                            <li><a class="dropdown-item" href="..\A_Alumnos\Alumnos.aspx">Alumnos</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="..\A_Profesores\Profesores.aspx">Profesores</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="..\A_Medicos\Medicos.aspx">Médicos</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="..\A_Escolares\Escolares.aspx">Escolares</a></li>
+                                        </ul>
+                                    </li>
                             </ul>
 
                         </div>
@@ -63,46 +63,52 @@
         <br />
         <br />
         <%--Pagina--%>
-        <h2>Seguimiento a Profesor con Caso Positivo a detalle</h2>
 
-        <p>Seleccione el número de Empleado</p>
-        <asp:DropDownList ID="DropDownList_profesores" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList_profesores_SelectedIndexChanged"></asp:DropDownList>
+        <div class="content centerContent">
+            <div class="container-fluid col-xl-8 col-md-12">
+                <div class="card">
+                    <div class="card-body centerContent">
+                        <h5 class="card-title">Seguimiento a Profesor con Caso Positivo a detalle</h5>
+                        <p>Seleccione el número de Empleado</p>
+                        <asp:DropDownList ID="DropDownList_profesores" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList_profesores_SelectedIndexChanged"></asp:DropDownList>
+                        <p>Información</p>
+                        <br />
+                        <p>Fecha de Confirmado</p>
+                        <asp:Label ID="Label_fecha_confirmado" runat="server" Text=""></asp:Label>
+                        <br />
+                        <p>Número de Contagio</p>
+                        <asp:Label ID="Label_num_contagio" runat="server" Text=""></asp:Label>
+                        <br />
+                        <p>Prueba COVID</p>
+                        <br />
+                        <p>Antecedentes Médicos</p>
+                        <asp:Label ID="Label_antecedentes" runat="server" Text=""></asp:Label>
+                        <br />
+                        <p>Nivel de Riesgo</p>
+                        <asp:Label ID="Label_riesgo" runat="server" Text=""></asp:Label>
+                        <br />
+                        <p>Médico Asignado</p>
+                        <asp:Label ID="Label_medico" runat="server" Text=""></asp:Label>
+                        <br />
+                        <p>Fecha de Inicio de Seguimiento</p>
+                        <asp:Label ID="Label_fecha_segui" runat="server" Text=""></asp:Label>
+                        <br />
+                        <p>Incapacidades</p>
+                        <br />
+                        <p>Número de Incapacidades</p>
+                        <asp:Label ID="Label_num_inca" runat="server" Text=""></asp:Label>
+                        <br />
+                        <p>Incapacidades Registradas</p>
+                        <asp:GridView ID="GridView_inca" runat="server"></asp:GridView>
+                        <br />
 
-        <p>Información</p>
+                        <asp:ListBox ID="ListBox1" runat="server"></asp:ListBox>
 
-        <p>Fecha de Confirmado</p>
-        <asp:Label ID="Label_fecha_confirmado" runat="server" Text="Label"></asp:Label>
+                    </div>
 
-        <p>Número de Contagio</p>
-        <asp:Label ID="Label_num_contagio" runat="server" Text="Label"></asp:Label>
-
-        <p>Prueba COVID</p>
-
-        <p>Antecedentes Médicos</p>
-        <asp:Label ID="Label_antecedentes" runat="server" Text="Label"></asp:Label>
-
-        <p>Nivel de Riesgo</p>
-        <asp:Label ID="Label_riesgo" runat="server" Text="Label"></asp:Label>
-
-        <p>Médico Asignado</p>
-        <asp:Label ID="Label_medico" runat="server" Text="Label"></asp:Label>
-
-        <p>Fecha de Inicio de Seguimiento</p>
-        <asp:Label ID="Label_fecha_segui" runat="server" Text="Label"></asp:Label>
-
-        <p>Incapacidades</p>
-
-        <p>Número de Incapacidades</p>
-        <asp:Label ID="Label_num_inca" runat="server" Text="Label"></asp:Label>
-
-        <p>Incapacidades Registradas</p>
-        <asp:GridView ID="GridView_inca" runat="server"></asp:GridView>
-
-
-        <asp:ListBox ID="ListBox1" runat="server"></asp:ListBox>
-
-   
-
+                </div>
+            </div>
+        </div>
 
     </form>
 </body>

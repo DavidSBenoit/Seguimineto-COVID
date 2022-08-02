@@ -96,15 +96,6 @@ namespace Seguimineto_COVID
         protected global::System.Web.UI.WebControls.DropDownList DropDownList_edocivil;
 
         /// <summary>
-        /// Control DropDownList_nivel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList_nivel;
-
-        /// <summary>
         /// Control Button_agregar_alumno.
         /// </summary>
         /// <remarks>

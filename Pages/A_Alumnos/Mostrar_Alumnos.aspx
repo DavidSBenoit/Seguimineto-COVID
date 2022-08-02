@@ -11,11 +11,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-               <%--nav bar--%>
+        <%--nav bar--%>
         <div>
             <nav class="navbar navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Seguimiento de Covid</a>
+                    <a class="navbar-brand" href="..\..\Home.aspx">Seguimiento de Covid</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -27,30 +27,30 @@
                         <div class="offcanvas-body">
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="..\Home.aspx">Home</a>
+                                    <a class="nav-link active" aria-current="page" href="..\..\Home.aspx">Home</a>
                                 </li>
-                                
+
                                 <li class="nav-item dropdown">
                                     <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Áreas
-                                    </a>
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Áreas
+                                        </a>
 
-                                    <ul class="dropdown-menu dropdown-menu-dark">
-                                        <li><a class="dropdown-item" href="..\Pages\A_Alumnos\Alumnos.aspx">Alumnos</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="..\Pages\A_Profesores\Profesores.aspx">Profesores</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="..\Pages\A_Medicos\Medicos.aspx">Médicos</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="..\Pages\A_Escolares\Escolares.aspx">Escolares</a></li>
-                                    </ul>
-                                </li>
+                                        <ul class="dropdown-menu dropdown-menu-dark">
+                                            <li><a class="dropdown-item" href="..\A_Alumnos\Alumnos.aspx">Alumnos</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="..\A_Profesores\Profesores.aspx">Profesores</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="..\A_Medicos\Medicos.aspx">Médicos</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="..\A_Escolares\Escolares.aspx">Escolares</a></li>
+                                        </ul>
+                                    </li>
                             </ul>
 
                         </div>
@@ -58,17 +58,35 @@
                 </div>
             </nav>
         </div>
+
         <br />
         <br />
         <br />
         <%--Pagina--%>
-        <div class="col-md-12">
-            <a href="/Pages/Registar_Alumno.aspx" class="btn btn-primary" tabindex="-1" role="button">Agregar Alumno</a>
-        </div>
-        <a href="/Pages/Editar_Alumno.aspx" class="btn btn-primary" tabindex="-1" role="button">Editar Alumno</a>
-        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
 
-       
+        <div class="content centerContent">
+            <div class="container-fluid col-xl-8 col-md-12">
+                <div class="card">
+                    <div class="card-body centerContent">
+                        <h5 class="card-title">Mostrar Alumnos</h5>
+                        <a href="/Pages/A_Alumnos/Registar_Alumno.aspx" class="btn btn-dark" tabindex="-1" role="button">Agregar Alumno</a>
+                        <a href="/Pages/A_Alumnos/Editar_Alumno.aspx" class="btn btn-dark" tabindex="-1" role="button">Editar Alumno</a>
+                        <br />
+                        <br />
+                        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            
+        </div>
+        
+        
+
+
     </form>
 </body>
 </html>

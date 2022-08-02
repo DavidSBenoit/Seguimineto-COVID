@@ -60,8 +60,26 @@
         </div>
         <br />
         <br />
+        <br />
+        <br />
         <%--pagina--%>
-    </form>
+
+                <div class="content centerContent">
+            <div class="container-fluid col-xl-8 col-md-12">
+                <div class="card">
+                    <div class="card-body centerContent">
+                        <h3>Bienvenido</h3>
+                        <h5 class="card-title">Áreas Del Sistema</h5>
+                        <a href="\Pages\A_Alumnos\Alumnos.aspx" class="btn btn-dark" tabindex="-1" role="button">Area de Alumnos</a>
+                        <a href="\Pages\A_Profesores\Profesores.aspx" class="btn btn-dark" tabindex="-1" role="button">Area de Profesores</a>
+                        <a href="\Pages\A_Medicos\Medicos.aspx" class="btn btn-dark" tabindex="-1" role="button">Area de Médicos</a>
+                        <a href="\Pages\A_Escolares\Escolares.aspx" class="btn btn-dark" tabindex="-1" role="button">Area de Escolares</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     </form>
 </body>
 </html>
